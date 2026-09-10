@@ -4,31 +4,43 @@
    ========================================================= */
 
 :root {
-  /* Paleta — naturaleza mallorquina y elegancia rústica */
-  --olive-deep: #454c3e;
-  --olive: #6b705c;
-  --olive-soft: #98a08c;
-  --cream: #f4efe3;
-  --sand: #eadfc8;
-  --sand-soft: #f3ecdd;
-  --stone: #6b6558;
-  --terracotta: #a15a34;
-  --terracotta-deep: #8a4826;
-  --ink: #2c302e;
-  --paper: #f9f6f0;
-  --white: #ffffff;
+  /* ============================================================
+     Paleta — lujo rústico mallorquín
+     Arena y crema cálidas · verde oliva profundo · tierra / terracota
+     ============================================================ */
+  --paper: #fbf6ec; /* fondo principal — arena cálida */
+  --cream: #f4ecdd; /* fondo secundario, alterna con paper */
+  --sand: #e8dac0; /* marcadores de foto, divisores */
+  --sand-soft: #f1e7d4; /* fondo de la sección de comodidades */
 
-  --shadow-sm: 0 6px 18px rgba(44, 48, 46, 0.08);
-  --shadow-md: 0 16px 40px rgba(44, 48, 46, 0.12);
-  --shadow-lg: 0 24px 60px rgba(44, 48, 46, 0.16);
+  --olive-deep: #2f3b27; /* verde oliva profundo — cabecera, footer, títulos */
+  --olive-deep-rgb: 47, 59, 39;
+  --olive-900: #202a19; /* casi negro-oliva — estados hover/pressed */
+  --olive: #56643f; /* verde oliva elegante — botones y acentos */
+  --olive-soft: #93a175; /* verde suave — chips, detalles ligeros */
+
+  --terracotta: #b4622e; /* acento tierra / terracota */
+  --terracotta-deep: #8b4a20; /* variante oscura, segura para texto/enlaces */
+
+  --ink: #262420; /* texto principal — casi negro cálido */
+  --stone: #6e6656; /* texto secundario, gris-tierra */
+  --white: #ffffff; /* tarjetas */
+
+  /* Sombras muy sutiles, propias de un acabado premium */
+  --shadow-xs: 0 2px 10px rgba(38, 34, 28, 0.05);
+  --shadow-sm: 0 8px 24px rgba(38, 34, 28, 0.06);
+  --shadow-md: 0 16px 38px rgba(38, 34, 28, 0.08);
+  --shadow-lg: 0 28px 58px rgba(38, 34, 28, 0.1);
 
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 26px;
   --header-h: 84px;
 
-  --font-serif: "Playfair Display", "Georgia", serif;
-  --font-sans: "Lato", "Segoe UI", sans-serif;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --font-serif: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", "Lato", "Segoe UI", sans-serif;
 }
 
 /* =========================================================
@@ -79,6 +91,13 @@ h3,
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--olive-deep);
+}
+
+/* Logotipo tipográfico: itálica sutil para un trazo de firma boutique */
+.brand-name {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 h1 {
@@ -180,8 +199,8 @@ textarea:focus-visible,
   display: grid;
   place-items: center;
   min-height: 220px;
-  background: linear-gradient(160deg, rgba(84, 102, 47, 0.14), rgba(161, 90, 52, 0.1)),
-    repeating-linear-gradient(135deg, rgba(36, 31, 26, 0.05) 0 12px, rgba(36, 31, 26, 0) 12px 24px),
+  background: linear-gradient(160deg, rgba(86, 100, 63, 0.14), rgba(180, 98, 46, 0.1)),
+    repeating-linear-gradient(135deg, rgba(38, 36, 32, 0.05) 0 12px, rgba(38, 36, 32, 0) 12px 24px),
     var(--sand);
   color: var(--stone);
   letter-spacing: 0.14em;
@@ -191,7 +210,7 @@ textarea:focus-visible,
   text-align: center;
   padding: 0.8rem;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(106, 94, 80, 0.18);
+  border: 1px solid rgba(110, 102, 86, 0.18);
 }
 
 /* =========================================================
@@ -204,7 +223,7 @@ textarea:focus-visible,
   justify-content: center;
   gap: 0.4rem;
   min-height: 48px;
-  padding: 0.85rem 1.5rem;
+  padding: 0.85rem 1.6rem;
   border-radius: 999px;
   border: 1px solid transparent;
   font-family: var(--font-sans);
@@ -213,20 +232,30 @@ textarea:focus-visible,
   letter-spacing: 0.01em;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium),
+    background 0.3s ease, background-color 0.3s ease, color 0.25s ease, border-color 0.25s ease,
+    letter-spacing 0.3s ease;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  letter-spacing: 0.03em;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn-primary {
-  background: var(--olive);
+  background: linear-gradient(135deg, var(--olive) 0%, var(--olive-deep) 130%);
   color: var(--white);
 }
 
 .btn-primary:hover {
-  background: var(--olive-deep);
+  background: linear-gradient(135deg, var(--olive-deep) 0%, var(--olive-900) 130%);
   color: var(--white);
 }
 
@@ -234,24 +263,30 @@ textarea:focus-visible,
 .btn-nav {
   background: transparent;
   color: var(--cream);
-  border-color: rgba(250, 245, 236, 0.5);
+  border-color: rgba(244, 236, 221, 0.5);
+  box-shadow: none;
 }
 
 .btn-ghost:hover,
 .btn-nav:hover {
   background: var(--cream);
   color: var(--olive-deep);
+  border-color: var(--cream);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-outline {
   background: transparent;
   color: var(--olive-deep);
-  border-color: rgba(51, 64, 42, 0.3);
+  border-color: rgba(47, 59, 39, 0.3);
+  box-shadow: none;
 }
 
 .btn-outline:hover {
   background: var(--olive-deep);
   color: var(--cream);
+  border-color: var(--olive-deep);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-block {
@@ -266,7 +301,7 @@ textarea:focus-visible,
   position: sticky;
   top: 0;
   z-index: 80;
-  background: rgba(51, 64, 42, 0.96);
+  background: rgba(var(--olive-deep-rgb), 0.96);
   backdrop-filter: blur(12px);
   color: var(--cream);
 }
@@ -310,7 +345,7 @@ textarea:focus-visible,
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  border: 1px solid rgba(250, 245, 236, 0.3);
+  border: 1px solid rgba(244, 236, 221, 0.3);
   border-radius: 999px;
   padding: 0.2rem;
   order: 3;
@@ -330,7 +365,7 @@ textarea:focus-visible,
 }
 
 .lang-btn:hover {
-  background: rgba(250, 245, 236, 0.15);
+  background: rgba(244, 236, 221, 0.15);
 }
 
 .lang-btn[aria-pressed="true"] {
@@ -439,7 +474,7 @@ textarea:focus-visible,
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(36, 31, 26, 0.2) 0%, rgba(36, 31, 26, 0.62) 55%, rgba(36, 31, 26, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(38, 36, 32, 0.2) 0%, rgba(38, 36, 32, 0.62) 55%, rgba(38, 36, 32, 0.85) 100%);
 }
 
 .hero-content {
@@ -479,7 +514,7 @@ textarea:focus-visible,
 }
 
 .hero-facts li + li {
-  border-left: 1px solid rgba(250, 245, 236, 0.35);
+  border-left: 1px solid rgba(244, 236, 221, 0.35);
   padding-left: 1.3rem;
 }
 
@@ -497,7 +532,7 @@ textarea:focus-visible,
 
 .location-note {
   padding: 1rem 0 0;
-  border-top: 1px solid rgba(106, 94, 80, 0.2);
+  border-top: 1px solid rgba(110, 102, 86, 0.2);
   color: var(--stone);
 }
 
@@ -522,7 +557,7 @@ textarea:focus-visible,
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(106, 94, 80, 0.1);
+  border: 1px solid rgba(110, 102, 86, 0.1);
 }
 
 .stay-card .photo-slot {
@@ -648,7 +683,7 @@ textarea:focus-visible,
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   min-height: 340px;
-  border: 1px solid rgba(106, 94, 80, 0.15);
+  border: 1px solid rgba(110, 102, 86, 0.15);
 }
 
 .location-map iframe {
@@ -673,7 +708,7 @@ textarea:focus-visible,
   font-style: normal;
   margin-bottom: 1.3rem;
   padding-bottom: 1.3rem;
-  border-bottom: 1px solid rgba(106, 94, 80, 0.18);
+  border-bottom: 1px solid rgba(110, 102, 86, 0.18);
   color: var(--stone);
 }
 
@@ -854,7 +889,7 @@ textarea:focus-visible,
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid rgba(106, 94, 80, 0.3);
+  border: 1px solid rgba(110, 102, 86, 0.3);
   background: var(--paper);
   border-radius: 12px;
   padding: 0.8rem 0.9rem;
@@ -927,7 +962,7 @@ textarea:focus-visible,
   width: min(1180px, calc(100% - 2.4rem));
   margin: 2.2rem auto 0;
   padding-top: 1.4rem;
-  border-top: 1px solid rgba(250, 245, 236, 0.12);
+  border-top: 1px solid rgba(244, 236, 221, 0.12);
   font-size: 0.8rem;
   color: #b7aea2;
 }
@@ -955,7 +990,7 @@ textarea:focus-visible,
   gap: 1rem;
   max-width: 720px;
   margin: 0 auto;
-  border: 1px solid rgba(106, 94, 80, 0.15);
+  border: 1px solid rgba(110, 102, 86, 0.15);
 }
 
 .cookie-banner[hidden] {
@@ -986,7 +1021,7 @@ textarea:focus-visible,
 .cookie-settings {
   display: grid;
   gap: 0.7rem;
-  border-top: 1px solid rgba(106, 94, 80, 0.18);
+  border-top: 1px solid rgba(110, 102, 86, 0.18);
   padding-top: 1rem;
   margin-top: 0.2rem;
 }
