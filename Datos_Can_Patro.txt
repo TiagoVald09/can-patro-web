@@ -1,0 +1,35 @@
+BASE DE CONOCIMIENTO DEL NEGOCIO
+
+Identidad y Marca:
+
+Nombre comercial público: Can Patró
+
+Nombre legal de la empresa (facturación y pie de página): Qhapaq Ayllu S.L.
+
+Ubicación: Polígono 33 242, 07509 Manacor, Mallorca, España.
+
+Distancias clave: 13 km de las Cuevas del Drach, 25 km del Golf de Pula, 54 km del Aeropuerto de Palma de Mallorca.
+
+La Propiedad y Servicios:
+
+Tamaño: Villa de 650 m².
+
+Distribución: 8 dormitorios y 8 baños en total.
+
+Comodidades: Piscina al aire libre, barbacoa, cocina totalmente equipada, terraza con vistas a la montaña, aire acondicionado/calefacción, WiFi gratis, parking privado gratis.
+
+Entorno: Vistas al jardín, rodeado de naturaleza. Zona ideal para practicar ciclismo, senderismo o relajarse.
+
+Modelo de Negocio (Reservas):
+
+Flexibilidad total: Se pueden alquilar habitaciones individuales o la casa/villa completa.
+
+El software de reservas y pagos será gestionado por un proveedor externo. La web solo debe tener botones de "Ver disponibilidad" o "Reservar" que lleven a ese sistema o al contacto por correo.
+
+Correos Electrónicos Oficiales:
+
+info@canpatro.com -> Para dudas de clientes y contacto general.
+
+reservas@canpatro.com -> Para gestión de disponibilidad y reservas.
+
+admin.canpatro@gmail.com -> Solo para uso interno de los administradores y registros de software.
