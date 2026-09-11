@@ -19,8 +19,13 @@
   --olive: #56643f; /* verde oliva elegante — botones y acentos */
   --olive-soft: #93a175; /* verde suave — chips, detalles ligeros */
 
-  --terracotta: #b4622e; /* acento tierra / terracota */
-  --terracotta-deep: #8b4a20; /* variante oscura, segura para texto/enlaces */
+  --terracotta: #c1652a; /* acento tierra / terracota — más vivo, uso decorativo */
+  --terracotta-deep: #8b4a20; /* variante oscura, segura para texto/enlaces — sin cambios */
+
+  /* Acento "sol mallorquín" — el toque de alegría, siempre puntual */
+  --sun: #e3a23b; /* dorado vivo — fondos e iconos decorativos, NO usar en texto pequeño */
+  --sun-deep: #8a5a12; /* dorado oscuro — seguro para texto (contraste AA verificado) */
+  --sun-rgb: 227, 162, 59;
 
   --ink: #262420; /* texto principal — casi negro cálido */
   --stone: #6e6656; /* texto secundario, gris-tierra */
@@ -39,8 +44,12 @@
 
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --font-serif: "Fraunces", "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", "Lato", "Segoe UI", sans-serif;
+  /* Tipografía — Playfair Display es ahora la serif de toda la página
+     (títulos de sección, tarjetas, footer...); la portada principal
+     conserva su propia fuente (Fraunces) sin verse afectada por esto,
+     ver regla .hero-title-main más abajo */
+  --font-serif: "Playfair Display", "Fraunces", Georgia, serif;
+  --font-sans: "Montserrat", "Inter", "Segoe UI", sans-serif;
 }
 
 /* =========================================================
@@ -58,18 +67,13 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  /*font-family: var(--font-sans);   OTRO TIPO DE LETRA, PROBANDO CUAL QUEDA MEJOR */ 
+  font-family: var(--font-sans);
   font-weight: 400;
   color: var(--ink);
   background: var(--paper);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, .brand-name, .hero-title {
-  font-family: 'Playfair Display', serif;
 }
 
 img,
@@ -111,7 +115,9 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.85rem, 4.2vw, 2.9rem);
+  /* Mínimo y escalado en vw sin cambios; solo se amplía el tope máximo
+     para dar más presencia en escritorio grande */
+  font-size: clamp(1.85rem, 4.2vw, 3.3rem);
   margin: 0.15em 0 0.45em;
 }
 
@@ -167,7 +173,7 @@ textarea:focus-visible,
   letter-spacing: 0.2em;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--terracotta-deep);
+  color: var(--sun-deep);
 }
 
 .section-inner {
@@ -216,6 +222,50 @@ textarea:focus-visible,
   padding: 0.8rem;
   border-radius: var(--radius-md);
   border: 1px solid rgba(110, 102, 86, 0.18);
+}
+
+/* =========================================================
+   Revelado al hacer scroll (alegría con medida)
+   El estado oculto solo se aplica si <html> lleva la clase
+   .js-reveal-ready (añadida por JS cuando IntersectionObserver
+   está disponible y el usuario no pide menos movimiento). Así,
+   sin JavaScript, todo el contenido es visible desde el primer
+   momento — no depende del script para poder leerse. No se
+   aplica a la portada (hero), que ya tiene su propia animación.
+   ========================================================= */
+
+.js-reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-premium), transform 0.7s var(--ease-premium);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.js-reveal-ready .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Línea de acento que se dibuja bajo los títulos de sección al aparecer */
+.js-reveal-ready .reveal h2::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  margin-top: 0.6rem;
+  background: var(--sun);
+  border-radius: 2px;
+  transition: width 0.9s var(--ease-premium) 0.15s;
+}
+
+.js-reveal-ready .reveal.is-visible h2::after {
+  width: 72px;
+}
+
+.js-reveal-ready .section-header.centered.reveal h2::after,
+.js-reveal-ready .cta-inner.reveal h2::after {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* =========================================================
@@ -276,8 +326,20 @@ textarea:focus-visible,
   color: var(--white);
 }
 
+/* Antes esta capa oscurecía el botón casi a negro en hover — sobre fondos
+   oscuros (como la portada) el texto blanco perdía contraste y "se apagaba".
+   Ahora aclara hacia un dorado cálido: más alegre y siempre legible. */
 .btn-primary::before {
-  background: linear-gradient(135deg, var(--olive-deep) 0%, var(--olive-900) 130%);
+  background: linear-gradient(135deg, var(--sun) 0%, var(--olive) 130%);
+}
+
+/* Bug corregido: la regla genérica a:hover (más específica que .btn-primary)
+   volvía el texto verde oscuro al pasar el ratón. Lo fijamos en blanco
+   siempre, y añadimos un resplandor cálido puntual. */
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  color: var(--white);
+  box-shadow: var(--shadow-sm), 0 10px 26px rgba(227, 162, 59, 0.35);
 }
 
 .btn-ghost,
@@ -337,10 +399,12 @@ textarea:focus-visible,
 
 /* Esta clase se encenderá mágicamente al bajar */
 .site-header.scrolled {
-  /* Tono gris/marrón oscuro (color ink) semitransparente con desenfoque de cristal */
-  background: rgba(38, 36, 32, 0.75); 
+  /* Más opaco y algo más oscuro que antes — con una foto muy clara
+     detrás, 0.75 no daba suficiente contraste a las letras del menú */
+  background: rgba(24, 23, 19, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
 }
 
 .header-inner {
@@ -351,6 +415,13 @@ textarea:focus-visible,
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+/* El header ahora flota fijo sobre el contenido (position: fixed);
+   esto evita que los enlaces del menú "#alojamientos", etc. dejen el
+   destino tapado debajo del header al saltar a la sección */
+main section[id] {
+  scroll-margin-top: var(--header-h);
 }
 
 .brand {
@@ -378,7 +449,10 @@ textarea:focus-visible,
 }
 
 .brand-logo {
-  max-height: 55px;
+  /* Un poco más grande para que respire y se note en el header —
+     el círculo se mantiene: el emblema (sol + montaña) es un motivo
+     redondo por naturaleza, un recorte cuadrado lo cortaría mal */
+  max-height: 68px;
   width: auto;
   transition: transform 0.3s ease;
   border-radius: 50%;
@@ -479,7 +553,7 @@ textarea:focus-visible,
 .site-nav ul {
   display: flex;
   align-items: center;
-  gap: 1.3rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -489,6 +563,7 @@ textarea:focus-visible,
   color: var(--cream);
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .site-nav a:hover {
@@ -540,8 +615,10 @@ textarea:focus-visible,
   text-align: center;
 }
 
-/* El título gigante de Can Patró */
+/* El título gigante de Can Patró — fuente fijada explícitamente para
+   que la portada no cambie aunque el resto de la web use otra fuente */
 .hero-title-main {
+  font-family: "Fraunces", Georgia, serif;
   font-size: clamp(3.5rem, 8vw, 6.5rem);
   margin: 0 0 0.5rem;
   color: var(--cream);
@@ -632,10 +709,34 @@ textarea:focus-visible,
 }
 
 .stay-card-body {
+  position: relative;
   padding: 1.8rem;
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+/* Numeración decorativa tipo editorial — detrás del texto, nunca lo tapa */
+.stay-number {
+  position: absolute;
+  z-index: 0;
+  top: 0.3rem;
+  right: 1.3rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--sun);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.stay-card-body h3,
+.stay-card-body p,
+.stay-card-body .btn {
+  position: relative;
+  z-index: 1;
 }
 
 .stay-card-body p {
@@ -672,6 +773,12 @@ textarea:focus-visible,
   padding: 1.5rem 1.2rem;
   box-shadow: var(--shadow-sm);
   text-align: left;
+  transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+}
+
+.amenity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .amenity-icon {
@@ -683,6 +790,12 @@ textarea:focus-visible,
   background: var(--sand-soft);
   color: var(--olive-deep);
   flex-shrink: 0;
+  transition: background-color 0.4s var(--ease-premium), color 0.4s var(--ease-premium);
+}
+
+.amenity-card:hover .amenity-icon {
+  background: var(--sun);
+  color: var(--olive-deep);
 }
 
 .amenity-icon svg {
@@ -1140,6 +1253,7 @@ textarea:focus-visible,
 
 .faq-item[open] .faq-icon {
   transform: rotate(180deg);
+  color: var(--sun-deep);
 }
 
 /* Contenedor animado: la altura pasa de 0 a la altura real del texto
@@ -1162,6 +1276,13 @@ textarea:focus-visible,
 
 .cta-band {
   background: var(--olive-deep);
+  color: var(--cream);
+}
+
+/* Bug corregido: el h2 heredaba color: var(--olive-deep) de la regla
+   general de títulos — exactamente el mismo tono que el fondo de esta
+   sección, así que el texto quedaba invisible. */
+.cta-band h2 {
   color: var(--cream);
 }
 
@@ -1555,6 +1676,14 @@ textarea:focus-visible,
   .distance-list li {
     flex-wrap: wrap;
   }
+
+  /* Numeración decorativa de las tarjetas de alojamiento: un
+     poco más pequeña en móvil para no competir con el título. */
+  .stay-number {
+    font-size: 2rem;
+    top: 0.2rem;
+    right: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1596,6 +1725,36 @@ textarea:focus-visible,
   .distance-list li.is-active .distance-btn {
     transform: none;
   }
+
+  /* El contenido revelado por scroll se muestra siempre, sin animación */
+  .js-reveal-ready .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .js-reveal-ready .reveal h2::after {
+    transition: none !important;
+  }
+
+  .amenity-card,
+  .amenity-icon {
+    transition: none !important;
+  }
+
+  .amenity-card:hover {
+    transform: none;
+  }
+
+  /* La portada también respeta la preferencia: el contenido queda
+     visible de inmediato en vez de depender de la animación de entrada */
+  .hero-title-main,
+  .hero-subtitle,
+  .hero-actions {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 /* =========================================================
@@ -1630,19 +1789,6 @@ textarea:focus-visible,
 /* Que la rayita se expanda al pasar el ratón */
 .site-nav a:not(.btn):hover::after {
   width: 100%;
-}
-
-/* 4. Efecto de lujo para el botón "Ver disponibilidad" */
-.site-header .btn {
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.site-header .btn:hover {
-  background-color: var(--cream); /* Se rellena de color crema cálido */
-  color: var(--olive-deep) !important; /* Letra oscura para que se lea */
-  border-color: var(--cream);
-  transform: translateY(-3px); /* Flota hacia arriba ligeramente */
-  box-shadow: 0 8px 20px rgba(0,0,0, 0.2); /* Sombra para dar profundidad */
 }
 
 /* =========================================================
@@ -1701,65 +1847,77 @@ textarea:focus-visible,
 }
 
 /* =========================================================
-   BOTÓN LLAMATIVO Y SELECTOR DE IDIOMAS PREMIUM
+   BOTÓN DE RESERVA Y SELECTOR DE IDIOMAS DEL HEADER
+   (una sola regla para el botón — antes estaba duplicada en dos
+   bloques distintos, lo que hacía el CSS difícil de mantener)
    ========================================================= */
 
-/* Hacer que el botón de reserva destaque siempre */
 .site-header .btn {
-  background-color: var(--cream); /* Fondo sólido color crema */
-  color: var(--olive-deep) !important; /* Letra oscura */
+  background-color: var(--cream);
+  color: var(--olive-deep) !important;
   border: none;
   font-weight: 500;
   padding: 0.6rem 1.8rem;
-  border-radius: 30px; /* Bordes muy redondeados, súper elegante */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), background-color 0.3s ease;
 }
 
 .site-header .btn:hover {
-  background-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
-/* El menú de idiomas */
+/* El menú de idiomas — una píldora discreta que se abre en un
+   desplegable pulido, en vez del bloque de texto suelto de antes */
 .lang-menu {
   position: relative;
   display: inline-block;
-  margin-right: 1.5rem;
   cursor: pointer;
 }
 
 .lang-current {
-  color: #ffffff;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--cream);
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(244, 236, 221, 0.35);
+  border-radius: 999px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.lang-menu:hover .lang-current {
+  background: rgba(244, 236, 221, 0.12);
+  border-color: rgba(244, 236, 221, 0.6);
 }
 
 .lang-current .arrow {
   font-size: 0.6rem;
-  margin-left: 4px;
-  opacity: 0.7;
+  opacity: 0.75;
   transition: transform 0.3s ease;
 }
 
-/* La caja desplegable (estilo cristal ahumado) */
+/* La caja desplegable */
 .lang-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 10px);
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  background: rgba(38, 36, 32, 0.9);
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(24, 23, 19, 0.96);
   backdrop-filter: blur(10px);
-  border-radius: 8px;
-  padding: 0.5rem 0;
-  min-width: 100px;
+  border: 1px solid rgba(244, 236, 221, 0.14);
+  border-radius: var(--radius-md);
+  padding: 0.4rem;
+  min-width: 130px;
   list-style: none;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: opacity 0.3s var(--ease-premium), transform 0.3s var(--ease-premium), visibility 0.3s;
+  box-shadow: var(--shadow-lg);
 }
 
 /* Animación al pasar el ratón */
@@ -1775,15 +1933,17 @@ textarea:focus-visible,
 
 .lang-dropdown li a {
   display: block;
-  padding: 0.5rem 1.2rem;
-  color: #ffffff;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--cream);
   font-size: 0.85rem;
   text-decoration: none;
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .lang-dropdown li a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--sun);
+  color: var(--olive-deep);
 }
 
 /* =========================================================

@@ -676,4 +676,58 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+/* =========================================================
+   Aparición al hacer scroll — mejora progresiva
+   Las secciones y tarjetas marcadas con la clase ".reveal"
+   aparecen suavemente al entrar en pantalla. Si el navegador
+   no soporta IntersectionObserver, o la persona prefiere
+   menos movimiento (prefers-reduced-motion), no se añade la
+   clase "js-reveal-ready" y el CSS deja todo visible de
+   inmediato — nunca depende de este script para poder leerse.
+   ========================================================= */
+(function () {
+  var prefersReducedMotion = window.matchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  var revealEls = document.querySelectorAll(".reveal");
+  if (!revealEls.length) {
+    return;
+  }
+
+  document.documentElement.classList.add("js-reveal-ready");
+
+  /* Retraso escalonado: cada elemento ".reveal" recibe un
+     pequeño retraso según su posición entre los hermanos
+     ".reveal" de su mismo contenedor, para que aparezcan en
+     cascada en vez de todos a la vez. */
+  var seen = new Map();
+  revealEls.forEach(function (el) {
+    var parent = el.parentElement || document.body;
+    var index = seen.get(parent) || 0;
+    el.style.setProperty("--reveal-delay", (index * 90) + "ms");
+    seen.set(parent, index + 1);
+  });
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealEls.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+
 initLanguage();
