@@ -58,13 +58,18 @@ html {
 }
 
 body {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  font-family: var(--font-sans);
+  /*font-family: var(--font-sans);   OTRO TIPO DE LETRA, PROBANDO CUAL QUEDA MEJOR */ 
   font-weight: 400;
   color: var(--ink);
   background: var(--paper);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .brand-name, .hero-title {
+  font-family: 'Playfair Display', serif;
 }
 
 img,
@@ -1638,4 +1643,187 @@ textarea:focus-visible,
   border-color: var(--cream);
   transform: translateY(-3px); /* Flota hacia arriba ligeramente */
   box-shadow: 0 8px 20px rgba(0,0,0, 0.2); /* Sombra para dar profundidad */
+}
+
+/* =========================================================
+   INDICADOR DE SCROLL ANIMADO (ESTILO PREMIUM)
+   ========================================================= */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-text {
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em; /* Letras muy separadas, toque de lujo */
+}
+
+/* La rayita de fondo */
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* El brillo que cae simulando el movimiento */
+.scroll-line::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff;
+  animation: scrollDrop 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+@keyframes scrollDrop {
+  0% { top: -50%; }
+  100% { top: 150%; }
+}
+
+/* =========================================================
+   BOTÓN LLAMATIVO Y SELECTOR DE IDIOMAS PREMIUM
+   ========================================================= */
+
+/* Hacer que el botón de reserva destaque siempre */
+.site-header .btn {
+  background-color: var(--cream); /* Fondo sólido color crema */
+  color: var(--olive-deep) !important; /* Letra oscura */
+  border: none;
+  font-weight: 500;
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px; /* Bordes muy redondeados, súper elegante */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* El menú de idiomas */
+.lang-menu {
+  position: relative;
+  display: inline-block;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+.lang-current {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0;
+}
+
+.lang-current .arrow {
+  font-size: 0.6rem;
+  margin-left: 4px;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+/* La caja desplegable (estilo cristal ahumado) */
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(38, 36, 32, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  min-width: 100px;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Animación al pasar el ratón */
+.lang-menu:hover .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.lang-menu:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown li a {
+  display: block;
+  padding: 0.5rem 1.2rem;
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.lang-dropdown li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   DISTRIBUCIÓN DEL HEADER: LOGO (IZQ) - ENLACES (CENTRO) - ACCIONES (DER)
+   ========================================================= */
+
+/* 1. Centro: Navegación ("los cosos") */
+.site-nav {
+  order: 2; /* Sobrescribimos el order: 5 que tenías en tu CSS original */
+  margin: 0 auto; /* Obliga a los enlaces a quedarse en el centro exacto */
+}
+
+/* 2. Derecha: Idioma y Botón */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  order: 3; /* Nos aseguramos de que esto vaya siempre al final */
+}
+
+/* Ocultamos por defecto el botón destinado al menú de móvil */
+.mobile-only-btn {
+  display: none; 
+}
+
+/* Ajustes para tablet y móvil (cuando aparece la hamburguesa) */
+@media (max-width: 960px) {
+  .header-actions {
+    gap: 0;
+  }
+  
+  .desktop-only-btn {
+    display: none;
+  }
+
+  .mobile-only-btn {
+    display: block; 
+  }
+  
+  .site-nav {
+    margin: 0; /* Reseteamos el margen centrado para la vista móvil */
+  }
 }

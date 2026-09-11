@@ -8,6 +8,7 @@
       content="Can Patró, agroturismo de lujo rústico en Manacor, Mallorca. Villa de 650 m² con 8 habitaciones, piscina y jardines. Alquila por habitación, mini-apartamento o casa completa."
     />
     <title>Can Patró | Agroturismo en Mallorca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="logo.png" />
     <link rel="apple-touch-icon" href="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,40 +21,57 @@
   </head>
   <body>
     <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+ 
+<header class="site-header">
+  <div class="header-inner">
+    <!-- 1. LOGO (Izquierda) -->
+    <a class="brand" href="#inicio">
+      <img src="logo.png" alt="Logo Can Patró" class="brand-logo" />
+    </a>
 
-    <header class="site-header">
-      <div class="header-inner">
-      <a class="brand" href="#inicio">
-          <img src="logo.png" alt="Logo Can Patró" class="brand-logo" />
-        </a>
+    <!-- Toggle para móvil -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label" data-i18n-aria-label="nav.open" aria-label="Abrir menú">
+      <span></span>
+    </label>
 
-        <div class="lang-switch" role="group" aria-label="Selector de idioma / Language selector / Sprachauswahl">
-          <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
-          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+    <!-- 2. NAVEGACIÓN (Centro/Derecha) -->
+    <nav class="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="#alojamientos" data-i18n="nav.alojamientos">Alojamientos</a></li>
+        <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+        <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li>
+        <li><a href="#ubicacion" data-i18n="nav.ubicacion">Ubicación</a></li>
+        <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        
+        <!-- Botón SOLO PARA MÓVIL (dentro del menú hamburguesa) -->
+        <li class="mobile-only-btn">
+          <a class="btn btn-nav" href="#disponibilidad" data-i18n="nav.cta">Ver disponibilidad</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 3. ACCIONES: Idioma + Botón (Extremo Derecho en Escritorio) -->
+    <div class="header-actions">
+      <!-- Selector de Idiomas Premium -->
+      <div class="lang-menu">
+        <div class="lang-current">
+          ES <span class="arrow">▼</span>
         </div>
-
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label" data-i18n-aria-label="nav.open" aria-label="Abrir menú">
-          <span></span>
-        </label>
-
-        <nav class="site-nav" aria-label="Principal">
-          <ul>
-            <li><a href="#alojamientos" data-i18n="nav.alojamientos">Alojamientos</a></li>
-            <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
-            <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li>
-            <li><a href="#ubicacion" data-i18n="nav.ubicacion">Ubicación</a></li>
-            <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
-            <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-            <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
-            <li>
-              <a class="btn btn-nav" href="#disponibilidad" data-i18n="nav.cta">Ver disponibilidad</a>
-            </li>
-          </ul>
-        </nav>
+        <ul class="lang-dropdown">
+          <li><a href="#" data-lang="es">Español</a></li>
+          <li><a href="#" data-lang="en">English</a></li>
+          <li><a href="#" data-lang="de">Deutsch</a></li>
+        </ul>
       </div>
-    </header>
+
+      <!-- Botón de Reserva (fuera del nav, visible solo en escritorio) -->
+      <a class="btn btn-nav desktop-only-btn" href="#disponibilidad" data-i18n="nav.cta">Ver disponibilidad</a>
+    </div>
+  </div>
+</header>
 
     <main id="contenido">
       <!-- ===================== HERO ===================== -->
@@ -62,15 +80,21 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <h1 class="hero-title-main">Can Patró</h1>
-          <p class="hero-subtitle">
+          <p class="hero-subtitle" data-i18n="hero.subtitle_short">
             Villa de agroturismo en el corazón de Mallorca
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#alojamientos">Descubrir</a>
-            <a class="btn btn-ghost" href="#disponibilidad">Ver disponibilidad</a>
+           <a class="btn btn-primary" href="#alojamientos" data-i18n="hero.btn_descubrir">Descubrir</a>
+           <a class="btn btn-ghost" href="#disponibilidad" data-i18n="hero.cta1">Ver disponibilidad</a>
           </div>
         </div>
         </div>
+        <!-- Indicador de Scroll Premium -->
+
+        <a href="#alojamientos" class="scroll-indicator">
+          <span class="scroll-text" data-i18n="hero.scroll">Explorar</span>
+          <div class="scroll-line"></div>
+        </a>
       </section>
 
       <!-- ===================== INTRO ===================== -->

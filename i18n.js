@@ -29,6 +29,9 @@ var TRANSLATIONS = {
             "hero.lead": "Can Patró es una villa de agroturismo entre almendros y silencio. Ocho dormitorios, piscina al aire libre y el ritmo de la isla: lejos del ruido, a un paso de las cuevas, el mar y los pueblos de piedra.",
             "hero.cta1": "Ver disponibilidad",
             "hero.cta2": "Descubrir la casa",
+            "hero.subtitle_short": "Villa de agroturismo en el corazón de Mallorca",
+            "hero.btn_descubrir": "Descubrir",
+            "hero.scroll": "Explorar",
             "hero.fact1": "650 m²",
             "hero.fact2": "8 dormitorios",
             "hero.fact3": "8 baños",
@@ -199,6 +202,9 @@ var TRANSLATIONS = {
             "hero.lead": "Can Patró is an agritourism villa among almond trees and silence. Eight bedrooms, an outdoor pool and the island's own pace: far from the noise, close to the caves, the sea and the stone villages.",
             "hero.cta1": "Check availability",
             "hero.cta2": "Discover the house",
+            "hero.subtitle_short": "Agritourism villa in the heart of Mallorca",
+            "hero.btn_descubrir": "Discover",
+            "hero.scroll": "Explore",
             "hero.fact1": "650 m²",
             "hero.fact2": "8 bedrooms",
             "hero.fact3": "8 bathrooms",
@@ -369,6 +375,9 @@ var TRANSLATIONS = {
             "hero.lead": "Can Patró ist eine Agrotourismus-Villa zwischen Mandelbäumen und Stille. Acht Schlafzimmer, ein Freiluftpool und der Rhythmus der Insel: fernab vom Lärm, ganz nah an Höhlen, Meer und steinernen Dörfern.",
             "hero.cta1": "Verfügbarkeit prüfen",
             "hero.cta2": "Das Haus entdecken",
+            "hero.subtitle_short": "Agrotourismus-Villa im Herzen von Mallorca",
+            "hero.btn_descubrir": "Entdecken",
+            "hero.scroll": "Erkunden",
             "hero.fact1": "650 m²",
             "hero.fact2": "8 Schlafzimmer",
             "hero.fact3": "8 Badezimmer",
@@ -553,10 +562,10 @@ function applyLanguage(lang) {
 
   document.documentElement.setAttribute("lang", lang);
 
-  document.querySelectorAll(".lang-btn").forEach(function (btn) {
-    var isActive = btn.getAttribute("data-lang") === lang;
-    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-  });
+ var langCurrentEl = document.querySelector(".lang-current");
+  if (langCurrentEl) {
+    langCurrentEl.innerHTML = lang.toUpperCase() + ' <span class="arrow">▼</span>';
+  }
 
   var galleryBtn = document.getElementById("gallery-more");
   if (galleryBtn) {
@@ -589,9 +598,10 @@ function initLanguage() {
   applyLanguage(saved);
 }
 
-document.querySelectorAll(".lang-btn").forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    applyLanguage(btn.getAttribute("data-lang"));
+document.querySelectorAll(".lang-dropdown a").forEach(function (enlace) {
+  enlace.addEventListener("click", function (event) {
+    event.preventDefault(); // Evita que la página salte hacia arriba al hacer clic
+    applyLanguage(enlace.getAttribute("data-lang"));
   });
 });
 
