@@ -59,26 +59,18 @@
     <main id="contenido">
       <!-- ===================== HERO ===================== -->
       <section class="hero" id="inicio">
-        <div class="hero-media photo-slot" aria-hidden="true">[ESPACIO FOTOGRÁFICO]</div>
+        <img src="portadahd.png" class="hero-media" alt="Villa Can Patró con piscina" />
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Manacor · Mallorca</p>
-          <h1 data-i18n="hero.title">Desconectar en el campo, vivir Mallorca despacio.</h1>
-          <p class="hero-lead" data-i18n="hero.lead">
-            Can Patró es una villa de agroturismo entre almendros y silencio. Ocho
-            dormitorios, piscina al aire libre y el ritmo de la isla: lejos del
-            ruido, a un paso de las cuevas, el mar y los pueblos de piedra.
+          <h1 class="hero-title-main">Can Patró</h1>
+          <p class="hero-subtitle">
+            Villa de agroturismo en el corazón de Mallorca
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#disponibilidad" data-i18n="hero.cta1">Ver disponibilidad</a>
-            <a class="btn btn-ghost" href="#alojamientos" data-i18n="hero.cta2">Descubrir la casa</a>
+            <a class="btn btn-primary" href="#alojamientos">Descubrir</a>
+            <a class="btn btn-ghost" href="#disponibilidad">Ver disponibilidad</a>
           </div>
-          <ul class="hero-facts">
-            <li data-i18n="hero.fact1">650 m²</li>
-            <li data-i18n="hero.fact2">8 dormitorios</li>
-            <li data-i18n="hero.fact3">8 baños</li>
-            <li data-i18n="hero.fact4">Piscina · Barbacoa · Parking</li>
-          </ul>
+        </div>
         </div>
       </section>
 
@@ -937,6 +929,17 @@
            forma nativa (instantánea) sin necesidad de JavaScript. */
 
       })();
+      /* =========================================================
+           Menú que cambia al hacer scroll
+           ========================================================= */
+        var header = document.querySelector(".site-header");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
     </script>
   </body>
 </html>
