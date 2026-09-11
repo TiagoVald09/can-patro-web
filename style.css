@@ -1907,17 +1907,19 @@ main section[id] {
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%) translateY(6px);
-  background: rgba(24, 23, 19, 0.96);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(244, 236, 221, 0.14);
+  background: rgba(30, 36, 40, 0.90); /* Fondo carbón suave (no negro puro) */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-md);
   padding: 0.4rem;
-  min-width: 130px;
+  min-width: 135px;
   list-style: none;
   opacity: 0;
   visibility: hidden;
+  z-index: 9999;
   transition: opacity 0.3s var(--ease-premium), transform 0.3s var(--ease-premium), visibility 0.3s;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 /* Animación al pasar el ratón */
@@ -1931,19 +1933,23 @@ main section[id] {
   transform: rotate(180deg);
 }
 
+/* Letras dentro del desplegable: nítidas y legibles */
 .lang-dropdown li a {
   display: block;
-  padding: 0.55rem 1rem;
+  padding: 0.65rem 1rem;
   border-radius: var(--radius-sm);
-  color: var(--cream);
-  font-size: 0.85rem;
+  color: #f4ecdd; /* Crema suave */
+  font-size: 0.9rem;
+  font-weight: 500; /* Grosor medio para que no se vea delgada */
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Al pasar el ratón: celestito agua de la piscina */
 .lang-dropdown li a:hover {
-  background: var(--sun);
-  color: var(--olive-deep);
+  background: #38a8c4; /* Tono celestito mediterráneo */
+  color: #ffffff !important; /* Texto blanco en negrita para máximo contraste */
+  font-weight: 600;
 }
 
 /* =========================================================
@@ -1986,4 +1992,43 @@ main section[id] {
   .site-nav {
     margin: 0; /* Reseteamos el margen centrado para la vista móvil */
   }
+}
+
+/* =========================================================
+   BOTONES DEL HERO — ESTILO TRANQUILO Y MEDITERRÁNEO
+   ========================================================= */
+
+/* Botón principal: Crema cálido luminoso y sereno */
+.btn-hero-primary {
+  background: #fbf6ec; /* Arena / crema suave */
+  color: #2f3b27 !important; /* Verde oliva profundo para máxima legibilidad */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+  background: #ffffff;
+  color: #1f271a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* Botón secundario: Cristal esmerilado (se lee sobre el suelo claro) */
+.btn-hero-secondary {
+  background: rgba(38, 36, 32, 0.35); /* Fondo oscuro muy suave y translúcido */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(38, 36, 32, 0.55);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  color: #ffffff !important;
 }

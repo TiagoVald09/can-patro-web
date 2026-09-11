@@ -74,8 +74,10 @@
 </header>
 
     <main id="contenido">
-      <!-- ===================== HERO ===================== -->
+
+  <!-- ===================== HERO ===================== -->
       <section class="hero" id="inicio">
+        <!-- Corregida la extensión a .jpg -->
         <img src="portadahd.png" class="hero-media" alt="Villa Can Patró con piscina" />
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -83,18 +85,20 @@
           <p class="hero-subtitle" data-i18n="hero.subtitle_short">
             Villa de agroturismo en el corazón de Mallorca
           </p>
-          <div class="hero-actions">
-           <a class="btn btn-primary" href="#alojamientos" data-i18n="hero.btn_descubrir">Descubrir</a>
+<div class="hero-actions">
+            <!-- Botón 1: Acción de reserva con texto diferenciado -->
+            <a class="btn btn-hero-primary" href="#disponibilidad" data-i18n="hero.cta1">Reservar estancia</a>
+            
+            <!-- Botón 2: Para conocer la finca (va a #casa sin saltarse nada) -->
+            <a class="btn btn-hero-secondary" href="#casa" data-i18n="hero.cta2">Conocer la finca</a>
           </div>
         </div>
-        <!-- Indicador de Scroll Premium -->
 
-        <a href="#alojamientos" class="scroll-indicator">
-          <span class="scroll-text" data-i18n="hero.scroll">Explorar</span>
+        <!-- Indicador de Scroll limpio (solo la línea animada hacia la primera sección) -->
+        <a href="#casa" class="scroll-indicator" aria-label="Bajar a la sección La Finca">
           <div class="scroll-line"></div>
         </a>
       </section>
-
       <!-- ===================== INTRO ===================== -->
       <section class="intro" id="casa">
         <div class="section-inner split">
