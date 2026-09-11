@@ -372,6 +372,16 @@ textarea:focus-visible,
   color: inherit;
 }
 
+.brand-logo {
+  max-height: 55px;
+  width: auto;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.05);
+}
 /* Selector de idioma */
 .lang-switch {
   display: flex;
@@ -412,7 +422,7 @@ textarea:focus-visible,
 }
 
 .nav-toggle-label {
-  display: flex;
+  display: none;
   width: 44px;
   height: 44px;
   position: relative;
@@ -1403,30 +1413,52 @@ textarea:focus-visible,
     display: flex;
   }
 
-  .site-nav {
-    position: absolute;
-    top: var(--header-h);
+ .site-nav {
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    background: var(--olive-deep);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    width: 100%;
+    height: 100vh;
+    background: rgba(38, 36, 32, 0.92); /* Cristal ahumado casi oscuro */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1; /* Para que quede detrás del logo y del botón X */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.4s;
   }
 
   .site-nav ul {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem 1.4rem 1.4rem;
-    gap: 1rem;
+    align-items: center; /* Todo centrado estilo boutique */
+    padding: 0;
+    gap: 1.8rem; /* Más espacio para respirar */
   }
 
   .site-nav ul li {
-    width: 100%;
+    width: auto;
+  }
+
+  .site-nav a {
+    font-size: 1.45rem; /* Letras grandes y elegantes */
+    font-weight: 400;
+  }
+
+  .site-nav .btn-nav {
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+    padding: 0.9rem 2.4rem;
+    background: var(--cream); /* El botón resalta en crema cálido */
+    color: var(--olive-deep);
+    border: none;
   }
 
   .nav-toggle:checked ~ .site-nav {
-    max-height: 420px;
+    opacity: 1;
+    visibility: visible;
   }
 
   .hero-facts li + li {
@@ -1559,4 +1591,51 @@ textarea:focus-visible,
   .distance-list li.is-active .distance-btn {
     transform: none;
   }
+}
+
+/* =========================================================
+   EFECTOS PREMIUM AL PASAR EL RATÓN (HOVER)
+   ========================================================= */
+
+/* 1. Preparar las letras del menú (excluyendo el botón) */
+.site-nav a:not(.btn) {
+  position: relative; 
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* 2. El color fuerte y el resplandor de las letras */
+.site-nav a:not(.btn):hover {
+  color: #ffffff; 
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4); 
+}
+
+/* 3. La rayita elegante que aparece por debajo */
+.site-nav a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px; 
+  bottom: -6px; 
+  left: 50%;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%); 
+}
+
+/* Que la rayita se expanda al pasar el ratón */
+.site-nav a:not(.btn):hover::after {
+  width: 100%;
+}
+
+/* 4. Efecto de lujo para el botón "Ver disponibilidad" */
+.site-header .btn {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header .btn:hover {
+  background-color: var(--cream); /* Se rellena de color crema cálido */
+  color: var(--olive-deep) !important; /* Letra oscura para que se lea */
+  border-color: var(--cream);
+  transform: translateY(-3px); /* Flota hacia arriba ligeramente */
+  box-shadow: 0 8px 20px rgba(0,0,0, 0.2); /* Sombra para dar profundidad */
 }

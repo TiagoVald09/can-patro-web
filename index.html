@@ -23,9 +23,8 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="#inicio">
-          <span class="brand-kicker" data-i18n="brand.kicker">Agroturismo</span>
-          <span class="brand-name">Can Patró</span>
+      <a class="brand" href="#inicio">
+          <img src="logo.png" alt="Logo Can Patró" class="brand-logo" />
         </a>
 
         <div class="lang-switch" role="group" aria-label="Selector de idioma / Language selector / Sprachauswahl">
@@ -939,6 +938,20 @@
           } else {
             header.classList.remove("scrolled");
           }
+        });
+
+        /* =========================================================
+           Cerrar menú móvil al hacer clic en un enlace
+           ========================================================= */
+        var navLinks = document.querySelectorAll(".site-nav a");
+        var navToggle = document.getElementById("nav-toggle");
+        
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (navToggle.checked) {
+              navToggle.checked = false;
+            }
+          });
         });
     </script>
   </body>
