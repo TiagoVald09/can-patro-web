@@ -126,59 +126,97 @@
         </div>
       </section>
 
-      <!-- ===================== ALOJAMIENTOS ===================== -->
+ <!-- ===================== ALOJAMIENTOS ===================== -->
       <section class="stays" id="alojamientos">
         <div class="section-inner">
-          <header class="section-header reveal">
+          <!-- Encabezado centrado simétrico -->
+          <header class="section-header centered reveal">
             <p class="eyebrow" data-i18n="stays.eyebrow">Alojamientos</p>
             <h2 data-i18n="stays.title">Tres maneras de quedarse en Can Patró.</h2>
             <p data-i18n="stays.lead">
-              Flexibilidad total para cada viaje: una habitación para una
-              escapada íntima, un mini-apartamento con independencia propia, o
-              la villa entera para reunir a todo el grupo.
+              Flexibilidad total para cada viaje: una habitación para una escapada íntima, un mini-apartamento independiente o la villa completa para grupos y familias.
             </p>
           </header>
 
           <div class="stays-grid">
+            <!-- TARJETA 1: CASA COMPLETA -->
             <article class="stay-card reveal">
-              <figure class="photo-slot">[ESPACIO FOTOGRÁFICO]</figure>
+              <div class="stay-card-media">
+                <span class="stay-tag">Exclusividad total</span>
+                <figure class="photo-slot">[ESPACIO FOTOGRÁFICO]</figure>
+              </div>
               <div class="stay-card-body">
-                <span class="stay-number" aria-hidden="true">01</span>
-                <h3 data-i18n="stays.casa.title">Casa Completa</h3>
+                <div class="stay-card-header">
+                  <h3 data-i18n="stays.casa.title">Casa Completa</h3>
+                  <span class="stay-index">01</span>
+                </div>
                 <p data-i18n="stays.casa.desc">
-                  Los 650 m² de Can Patró solo para los suyos: 8 dormitorios, 8
-                  baños, piscina, jardín y cocina completa. Ideal para
-                  celebraciones, familias numerosas o grupos de amigos.
+                  Los 650 m² de Can Patró solo para los suyos: 8 dormitorios, 8 baños, piscina, jardín y cocina completa. Ideal para celebraciones o familias numerosas.
                 </p>
-                <a class="btn btn-primary" href="#disponibilidad" data-widget="smoobu" data-i18n="stays.casa.cta">Ver disponibilidad</a>
+                <ul class="stay-features">
+                  <li>650 m² villa</li>
+                  <li>8 habitaciones</li>
+                  <li>8 baños</li>
+                  <li>Uso exclusivo</li>
+                </ul>
+                <a class="btn btn-stay" href="#disponibilidad" data-widget="smoobu" data-i18n="stays.casa.cta">
+                  <span>Ver disponibilidad</span>
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
             </article>
 
+            <!-- TARJETA 2: HABITACIONES INDIVIDUALES -->
             <article class="stay-card reveal">
-              <figure class="photo-slot">[ESPACIO FOTOGRÁFICO]</figure>
+              <div class="stay-card-media">
+                <span class="stay-tag">Escapadas y parejas</span>
+                <figure class="photo-slot">[ESPACIO FOTOGRÁFICO]</figure>
+              </div>
               <div class="stay-card-body">
-                <span class="stay-number" aria-hidden="true">02</span>
-                <h3 data-i18n="stays.habitaciones.title">Habitaciones Individuales</h3>
+                <div class="stay-card-header">
+                  <h3 data-i18n="stays.habitaciones.title">Habitaciones Individuales</h3>
+                  <span class="stay-index">02</span>
+                </div>
                 <p data-i18n="stays.habitaciones.desc">
-                  Reserve solo su habitación, con baño privado y acceso a las
-                  zonas comunes de la finca. La opción perfecta para viajeros
-                  en pareja o estancias breves.
+                  Reserve solo su habitación con baño privado y acceso libre a los jardines, piscina y zonas comunes. Perfecto para estancias tranquilas.
                 </p>
-                <a class="btn btn-primary" href="#disponibilidad" data-widget="smoobu" data-i18n="stays.habitaciones.cta">Ver disponibilidad</a>
+                <ul class="stay-features">
+                  <li>Baño privado en suite</li>
+                  <li>Acceso a piscina</li>
+                  <li>WiFi alta velocidad</li>
+                  <li>Zonas comunes</li>
+                </ul>
+                <a class="btn btn-stay" href="#disponibilidad" data-widget="smoobu" data-i18n="stays.habitaciones.cta">
+                  <span>Ver disponibilidad</span>
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
             </article>
 
+            <!-- TARJETA 3: MINI-DEPARTAMENTOS -->
             <article class="stay-card reveal">
-              <figure class="photo-slot">[ESPACIO FOTOGRÁFICO]</figure>
+              <div class="stay-card-media">
+                <span class="stay-tag">Autonomía y calma</span>
+                <figure class="photo-slot">[ESPACIO FOTOGRÁFICO]</figure>
+              </div>
               <div class="stay-card-body">
-                <span class="stay-number" aria-hidden="true">03</span>
-                <h3 data-i18n="stays.miniapt.title">Mini-departamentos</h3>
+                <div class="stay-card-header">
+                  <h3 data-i18n="stays.miniapt.title">Mini-departamentos</h3>
+                  <span class="stay-index">03</span>
+                </div>
                 <p data-i18n="stays.miniapt.desc">
-                  Espacios independientes con cocina propia, pensados para
-                  quienes buscan autonomía sin perder el encanto y la calma de
-                  la finca.
+                  Espacios independientes equipados con cocina propia, pensados para quienes buscan total autonomía manteniendo la serenidad de la finca.
                 </p>
-                <a class="btn btn-primary" href="#disponibilidad" data-widget="smoobu" data-i18n="stays.miniapt.cta">Ver disponibilidad</a>
+                <ul class="stay-features">
+                  <li>Cocina equipada</li>
+                  <li>Entrada independiente</li>
+                  <li>Terraza / vistas</li>
+                  <li>Acceso a piscina</li>
+                </ul>
+                <a class="btn btn-stay" href="#disponibilidad" data-widget="smoobu" data-i18n="stays.miniapt.cta">
+                  <span>Ver disponibilidad</span>
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
             </article>
           </div>
@@ -292,14 +330,15 @@
       <!-- ===================== UBICACIÓN ===================== -->
       <section class="location" id="ubicacion">
         <div class="section-inner">
-          <header class="section-header reveal">
-            <p class="eyebrow" data-i18n="location.eyebrow">Ubicación</p>
-            <h2 data-i18n="location.title">El campo, cerca de todo lo demás.</h2>
-            <p data-i18n="location.lead">
-              Can Patró está en Manacor, en el corazón agrícola de Mallorca, a
-              poca distancia de cuevas, playas y el aeropuerto.
-            </p>
-          </header>
+<!-- Cambia esto: -->
+<header class="section-header centered reveal">
+  <p class="eyebrow" data-i18n="location.eyebrow">Ubicación</p>
+  <h2 data-i18n="location.title">El campo, cerca de todo lo demás.</h2>
+  <p data-i18n="location.lead">
+    Can Patró está en Manacor, en el corazón agrícola de Mallorca, a
+    poca distancia de cuevas, playas y el aeropuerto.
+  </p>
+</header>
 
           <div class="location-grid">
             <div class="location-map reveal">
@@ -517,69 +556,136 @@
         </div>
       </section>
 
-      <!-- ===================== CONTACTO ===================== -->
+<!-- ===================== CONTACTO ===================== -->
       <section class="contact" id="contacto">
-        <div class="section-inner split">
-          <div class="reveal">
+        <div class="section-inner">
+          <!-- Encabezado centrado y relajante -->
+          <header class="section-header centered reveal">
             <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
             <h2 data-i18n="contact.title">Le esperamos en Manacor.</h2>
             <p data-i18n="contact.lead">
-              Cuéntenos cuántas personas viajan, qué tipo de alojamiento
-              prefiere y las fechas aproximadas. Respondemos con claridad y
-              sin prisas.
+              Cuéntenos cuántas personas viajan, sus fechas deseadas o cualquier duda. Le responderemos con calma y atención personalizada.
             </p>
-            <address class="contact-details">
-              <p>
-                <span data-i18n="contact.info.label">Atención al cliente</span>
-                <a href="mailto:info@canpatro.com">info@canpatro.com</a>
-              </p>
-              <p>
-                <span data-i18n="contact.reservas.label">Reservas y gestión</span>
-                <a href="mailto:reservas@canpatro.com">reservas@canpatro.com</a>
-              </p>
-              <p>
-                <span data-i18n="contact.location.label">Ubicación</span>
-                <span data-i18n="contact.location.value">Manacor, Mallorca · 13 km Cuevas del Drach · 54 km aeropuerto</span>
-              </p>
-            </address>
-          </div>
+          </header>
 
-          <form class="contact-form reveal" action="mailto:reservas@canpatro.com" method="post" enctype="text/plain">
-            <label>
-              <span data-i18n="form.name">Nombre</span>
-              <input type="text" name="nombre" required data-i18n-placeholder="form.name.placeholder" placeholder="Su nombre" />
-            </label>
-            <label>
-              <span data-i18n="form.email">Correo</span>
-              <input type="email" name="correo" required data-i18n-placeholder="form.email.placeholder" placeholder="su@correo.com" />
-            </label>
-            <label>
-              <span data-i18n="form.stay">Tipo de alojamiento</span>
-              <select name="estancia">
-                <option value="habitacion" data-i18n="form.stay.room">Habitación individual</option>
-                <option value="miniapt" data-i18n="form.stay.miniapt">Mini-departamento</option>
-                <option value="casa" data-i18n="form.stay.house">Casa completa</option>
-                <option value="consultar" data-i18n="form.stay.unsure">Aún no lo sé</option>
-              </select>
-            </label>
-            <label>
-              <span data-i18n="form.message">Mensaje</span>
-              <textarea
-                name="mensaje"
-                rows="5"
-                required
-                data-i18n-placeholder="form.message.placeholder"
-                placeholder="Fechas, número de huéspedes y lo que le gustaría encontrar en Can Patró."
-              ></textarea>
-            </label>
-            <button class="btn btn-primary btn-block" type="submit" data-i18n="form.submit">Reservar / consultar</button>
-            <p class="form-note" data-i18n="form.note">
-              Este formulario abre su correo para enviarnos el mensaje. No
-              procesamos pagos en esta web.
-            </p>
-          </form>
+          <div class="contact-grid">
+            <!-- COLUMNA 1: Formulario limpio y con RGPD -->
+            <form class="contact-form-card reveal" action="mailto:reservas@canpatro.com" method="post" enctype="text/plain">
+              <label>
+                <span data-i18n="form.name">Nombre</span>
+                <input type="text" name="nombre" required data-i18n-placeholder="form.name.placeholder" placeholder="Su nombre completo" />
+              </label>
+
+              <label>
+                <span data-i18n="form.email">Correo electrónico</span>
+                <input type="email" name="correo" required data-i18n-placeholder="form.email.placeholder" placeholder="ejemplo@correo.com" />
+              </label>
+
+              <label>
+                <span data-i18n="form.stay">Tipo de alojamiento</span>
+                <select name="estancia">
+                  <option value="habitacion" data-i18n="form.stay.room">Habitación individual</option>
+                  <option value="miniapt" data-i18n="form.stay.miniapt">Mini-departamento</option>
+                  <option value="casa" data-i18n="form.stay.house">Casa completa</option>
+                  <option value="consultar" data-i18n="form.stay.unsure">Aún no lo sé</option>
+                </select>
+              </label>
+
+              <label>
+                <span data-i18n="form.message">Mensaje</span>
+                <textarea
+                  name="mensaje"
+                  rows="4"
+                  required
+                  data-i18n-placeholder="form.message.placeholder"
+                  placeholder="Fechas aproximadas, número de personas o cualquier detalle sobre su estancia..."
+                ></textarea>
+              </label>
+
+              <!-- Checkbox RGPD legal -->
+              <label class="checkbox-label">
+                <input type="checkbox" required />
+                <span>He leído y acepto el tratamiento de mis datos según la <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a>.</span>
+              </label>
+
+              <button class="btn btn-contact-submit" type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                <span data-i18n="form.submit">Enviar mensaje</span>
+              </button>
+
+              <p class="form-note" data-i18n="form.note">
+                Este formulario abre su correo para enviarnos el mensaje. No procesamos pagos en esta web.
+              </p>
+            </form>
+
+            <!-- COLUMNA 2: Información directa + Bloque de Reserva -->
+            <div class="contact-info-col reveal">
+              <!-- Tarjeta de canales directos -->
+              <div class="contact-card info-card">
+                <h3>Atención directa</h3>
+
+                <ul class="contact-items-list">
+                  <!-- TELÉFONO / WHATSAPP (Espacio listo para cuando lo tengáis) -->
+                  <li>
+                    <div class="contact-icon-badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                      <span class="contact-item-title">Teléfono / WhatsApp</span>
+                      <!-- Cambia el número y el href cuando lo tengas disponible -->
+                      <a href="tel:+34000000000" class="contact-item-val">+34 000 000 000</a>
+                    </div>
+                  </li>
+
+                  <!-- EMAIL DE CONSULTAS -->
+                  <li>
+                    <div class="contact-icon-badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div>
+                      <span class="contact-item-title" data-i18n="contact.info.label">Atención al cliente</span>
+                      <a href="mailto:info@canpatro.com" class="contact-item-val">info@canpatro.com</a>
+                    </div>
+                  </li>
+
+                  <!-- EMAIL DE RESERVAS -->
+                  <li>
+                    <div class="contact-icon-badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <div>
+                      <span class="contact-item-title" data-i18n="contact.reservas.label">Reservas y disponibilidad</span>
+                      <a href="mailto:reservas@canpatro.com" class="contact-item-val">reservas@canpatro.com</a>
+                    </div>
+                  </li>
+
+                  <!-- UBICACIÓN -->
+                  <li>
+                    <div class="contact-icon-badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                      <span class="contact-item-title" data-i18n="contact.location.label">Ubicación</span>
+                      <span class="contact-item-val">Polígono 33, 242 · 07509 Manacor, Mallorca</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tarjeta de Reserva Directa (Estilo boutique superior) -->
+              <div class="contact-card booking-cta-card">
+                <h3>Reservar Estancia</h3>
+                <p>Compruebe fechas libres en tiempo real y reserve con trato directo y confirmación oficial.</p>
+                <a class="btn btn-booking-box" href="#disponibilidad">
+                  <span>Ver disponibilidad</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
       <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
       <section class="faq" id="faq">
         <div class="section-inner">
@@ -681,10 +787,6 @@
       <div class="footer-legal">
         <p>
           © <span id="year">2026</span> Can Patró · <span data-i18n="footer.owner">Titular: Qhapaq Ayllu S.L.</span>
-        </p>
-        <p data-i18n="footer.disclaimer">
-          Esta web no gestiona pagos; las reservas se confirman por los
-          canales oficiales de la finca.
         </p>
       </div>
     </footer>
