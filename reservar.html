@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservar Estancia | Can Patró Agroturismo Mallorca</title>
+    <link rel="icon" type="image/png" href="logocircular.png" />
+    <meta name="description" content="Reserve su estancia en Can Patró, Manacor. Compruebe disponibilidad en tiempo real para casa completa, habitaciones o mini-apartamentos." />
+    
+    <!-- Fuentes y Estilos heredados -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400;1,9..144,600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+<!-- CABECERA IDÉNTICA A INDEX -->
+    <header class="site-header scrolled" id="header">
+      <div class="header-inner">
+        <!-- Logo circular -->
+        <a class="brand" href="index.html" aria-label="Can Patró - Inicio">
+          <img src="logo.png" alt="Can Patró Agroturismo" class="brand-logo-img" />
+        </a>
+
+        <!-- Toggle para móvil (checkbox real que abre el menú) -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label" data-i18n-aria-label="nav.open" aria-label="Abrir menú">
+          <span></span>
+        </label>
+
+        <!-- Navegación que enlaza de vuelta a las secciones de la portada -->
+        <nav class="site-nav" aria-label="Principal">
+          <ul id="nav-menu">
+            <li><a href="index.html#alojamientos" data-i18n="nav.alojamientos">Alojamientos</a></li>
+            <li><a href="index.html#servicios" data-i18n="nav.servicios">Servicios</a></li>
+            <li><a href="index.html#galeria" data-i18n="nav.galeria">Galería</a></li>
+            <li><a href="index.html#ubicacion" data-i18n="nav.ubicacion">Ubicación</a></li>
+            <li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
+            <li><a href="index.html#contacto" data-i18n="nav.contacto">Contacto</a></li>
+            <!-- Botón dentro del menú móvil para volver -->
+<li class="mobile-only-btn">
+  <a class="btn btn-primary nav-cta" href="index.html" data-i18n="nav.back">Volver a la finca</a>
+</li>
+          </ul>
+        </nav>
+
+        <!-- Idioma y Botón de Escritorio -->
+        <div class="header-actions">
+          <!-- Selector de Idiomas idéntico a index -->
+          <div class="lang-menu">
+            <div class="lang-current">
+              ES <span class="arrow">▾</span>
+            </div>
+            <ul class="lang-dropdown">
+              <li><a href="#" data-lang="es">Español</a></li>
+              <li><a href="#" data-lang="en">English</a></li>
+              <li><a href="#" data-lang="de">Deutsch</a></li>
+            </ul>
+          </div>
+          <!-- Botón blanco visible en escritorio -->
+          <a class="btn btn-nav desktop-only-btn" href="index.html" data-i18n="nav.back">Volver a la finca</a>
+        </div>
+      </div>
+    </header>
+
+    
+    <!-- ÁREA DE RESERVAS (MISMO DOMINIO) -->
+    <main class="booking-page-main">
+      <section class="booking-section">
+        <div class="section-inner">
+<header class="section-header centered">
+  <p class="eyebrow" data-i18n="booking.eyebrow">Disponibilidad Oficial</p>
+  <h1 data-i18n="booking.title">Reservar Estancia</h1>
+  <p class="lead" data-i18n="booking.lead">Seleccione sus fechas de llegada y salida para consultar disponibilidad en tiempo real.</p>
+</header>
+
+          <!-- CONTENEDOR DONDE SE PEGARÁ EL CÓDIGO DE SMOOBU -->
+          <div class="booking-engine-wrapper">
+            <!-- Cuando tengáis la cuenta de Smoobu, se pega el script/iframe aquí -->
+            <div id="smoobu-booking-container" class="booking-placeholder">
+              <div class="booking-placeholder-content">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#38a8c4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <h3>Motor de Reservas Can Patró</h3>
+                <p>El calendario interactivo de reservas se cargará en este espacio mediante Smoobu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="brand-name">Can Patró</p>
+          <p data-i18n="footer.tagline">Agroturismo en Manacor, Mallorca. Paz, campo y una villa para quedarse.</p>
+        </div>
+        <div>
+          <h2 data-i18n="footer.contact.heading">Contacto</h2>
+          <p><a href="mailto:info@canpatro.com">info@canpatro.com</a></p>
+          <p><a href="mailto:reservas@canpatro.com">reservas@canpatro.com</a></p>
+        </div>
+        <div>
+          <h2 data-i18n="footer.legal.heading">Aviso legal</h2>
+          <ul class="footer-legal-links">
+            <li><a href="aviso-legal.html" data-i18n="footer.legal.notice">Aviso Legal</a></li>
+            <li><a href="politica-privacidad.html" data-i18n="footer.legal.privacy">Política de Privacidad</a></li>
+            <li><a href="politica-cookies.html" data-i18n="footer.legal.cookies">Política de Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>
+          © <span id="year">2026</span> Can Patró · <span data-i18n="footer.owner">Titular: Qhapaq Ayllu S.L.</span>
+        </p>
+      </div>
+    </footer>
+
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

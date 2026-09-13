@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Cookies | Can Patró Agroturismo</title>
+    <link rel="icon" type="image/png" href="logocircular.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400;1,9..144,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+<!-- CABECERA UNIFICADA (CON IDIOMAS Y MÓVIL) -->
+    <header class="site-header scrolled" id="header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Can Patró - Inicio">
+          <img src="logo.png" alt="Can Patró Agroturismo" class="brand-logo-img" />
+        </a>
+
+        <!-- Checkbox para abrir el menú móvil -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label" data-i18n-aria-label="nav.open" aria-label="Abrir menú">
+          <span></span>
+        </label>
+
+        <!-- Menú con enlaces y etiquetas traducibles -->
+        <nav class="site-nav" aria-label="Principal">
+          <ul id="nav-menu">
+            <li><a href="index.html#alojamientos" data-i18n="nav.alojamientos">Alojamientos</a></li>
+            <li><a href="index.html#servicios" data-i18n="nav.servicios">Servicios</a></li>
+            <li><a href="index.html#galeria" data-i18n="nav.galeria">Galería</a></li>
+            <li><a href="index.html#ubicacion" data-i18n="nav.ubicacion">Ubicación</a></li>
+            <li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
+            <li><a href="index.html#contacto" data-i18n="nav.contacto">Contacto</a></li>
+            <li class="mobile-only-btn">
+              <a class="btn btn-primary nav-cta" href="index.html" data-i18n="nav.back">Volver a la finca</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Selector de idioma y botón en escritorio -->
+        <div class="header-actions">
+          <div class="lang-menu">
+            <div class="lang-current">
+              ES <span class="arrow">▾</span>
+            </div>
+            <ul class="lang-dropdown">
+              <li><a href="#" data-lang="es">Español</a></li>
+              <li><a href="#" data-lang="en">English</a></li>
+              <li><a href="#" data-lang="de">Deutsch</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-nav desktop-only-btn" href="index.html" data-i18n="nav.back">Volver a la finca</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="legal-page-main">
+      <div class="legal-container">
+        <h1 data-i18n="footer.legal.cookies">Política de Cookies</h1>
+        <p class="legal-updated">Información sobre el uso de identificadores y almacenamiento local.</p>
+
+        <section class="legal-block">
+          <h2>1. ¿Qué son las cookies?</h2>
+          <p>Una cookie es un pequeño archivo que se almacena en su ordenador, teléfono o tableta al acceder a determinadas páginas web. Permiten a un sitio web almacenar y recuperar información sobre los hábitos de navegación o preferencias de idioma de un usuario.</p>
+        </section>
+
+        <section class="legal-block">
+          <h2>2. Tipos de cookies utilizadas en Can Patró</h2>
+          <ul>
+            <li><strong>Cookies técnicas necesarias:</strong> Imprescindibles para el correcto funcionamiento de la web, tales como recordar el idioma preferido del visitante (Español, Inglés o Alemán) o mantener la seguridad durante la navegación. No recaban datos con fines publicitarios.</li>
+            <li><strong>Cookies de reserva y disponibilidad (Smoobu):</strong> En los apartados de reserva se cargan elementos técnicos de nuestro motor de reservas Smoobu para recordar las fechas de entrada y salida seleccionadas por el huésped y comprobar la disponibilidad en tiempo real.</li>
+          </ul>
+        </section>
+
+        <section class="legal-block">
+          <h2>3. Cómo gestionar o bloquear las cookies</h2>
+          <p>Usted puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones de su navegador de Internet:</p>
+          <ul>
+            <li><strong>Google Chrome:</strong> Configuración &gt; Privacidad y seguridad &gt; Cookies y otros datos de sitios.</li>
+            <li><strong>Mozilla Firefox:</strong> Opciones &gt; Privacidad y Seguridad &gt; Cookies y datos del sitio.</li>
+            <li><strong>Apple Safari:</strong> Preferencias &gt; Privacidad.</li>
+            <li><strong>Microsoft Edge:</strong> Configuración &gt; Permisos del sitio &gt; Cookies y datos guardados.</li>
+          </ul>
+          <p>Tenga en cuenta que si desactiva las cookies técnicas necesarias, algunas funciones interactivas del calendario o la navegación de la web podrían no responder con normalidad.</p>
+        </section>
+      </div>
+    </main>
+
+<footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="brand-name">Can Patró</p>
+          <p data-i18n="footer.tagline">Agroturismo en Manacor, Mallorca. Paz, campo y una villa para quedarse.</p>
+        </div>
+        <div class="footer-col">
+          <h2 data-i18n="footer.contact.heading">Contacto</h2>
+          <p><a href="mailto:info@canpatro.com">info@canpatro.com</a></p>
+          <p><a href="mailto:reservas@canpatro.com">reservas@canpatro.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h2 data-i18n="footer.legal.heading">Aviso legal</h2>
+          <ul class="footer-legal-links">
+            <li><a href="aviso-legal.html" data-i18n="footer.legal.notice">Aviso Legal</a></li>
+            <li><a href="politica-privacidad.html" data-i18n="footer.legal.privacy">Política de Privacidad</a></li>
+            <li><a href="cookies.html" data-i18n="footer.legal.cookies">Política de Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; 2026 Can Patró · <span data-i18n="footer.owner">Titular: Qhapaq Ayllu S.L.</span></p>
+      </div>
+    </footer>
+ <script src="i18n.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
