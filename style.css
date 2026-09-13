@@ -654,6 +654,51 @@ main section[id] {
   background: var(--cream);
 }
 
+/* Métricas de la finca estilo boutique */
+.intro-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1.8rem 0;
+  padding: 1.2rem 0;
+  border-top: 1px solid #e3ebf0;
+  border-bottom: 1px solid #e3ebf0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #1c2b36;
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #38a8c4;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+.stat-desc {
+  font-size: 0.78rem;
+  color: #556773;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 600px) {
+  .intro-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
 .intro-photo {
   min-height: 380px;
 }
@@ -825,52 +870,59 @@ main section[id] {
 }
 
 /* =========================================================
-   Servicios y comodidades
+   SERVICIOS Y COMODIDADES — CUADRÍCULA BALEAR 4x2
    ========================================================= */
 
 .amenities {
   background: var(--sand-soft);
+  padding: 2rem 0 4rem;
 }
 
+/* 4 columnas en ordenador para equilibrar la pantalla */
 .amenity-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
 }
 
 .amenity-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.7rem;
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 1.5rem 1.2rem;
-  box-shadow: var(--shadow-sm);
-  text-align: left;
-  transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.8rem 1.2rem;
+  border: 1px solid #e3ebf0;
+  box-shadow: 0 6px 20px rgba(28, 43, 54, 0.04);
+  transition: transform 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium), border-color 0.3s ease;
 }
 
 .amenity-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+  border-color: #38a8c4;
+  box-shadow: 0 14px 30px rgba(56, 168, 196, 0.12);
 }
 
+/* Icono circular celeste en reposo */
 .amenity-icon {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: var(--sand-soft);
-  color: var(--olive-deep);
+  background: #f0f6f8;
+  color: #2b7a94;
   flex-shrink: 0;
-  transition: background-color 0.4s var(--ease-premium), color 0.4s var(--ease-premium);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+/* Al pasar el cursor: se enciende en celeste piscina con icono blanco (adiós mostaza) */
 .amenity-card:hover .amenity-icon {
-  background: var(--sun);
-  color: var(--olive-deep);
+  background: #38a8c4;
+  color: #ffffff;
+  transform: scale(1.08);
 }
 
 .amenity-icon svg {
@@ -880,10 +932,24 @@ main section[id] {
 
 .amenity-card h3 {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.98rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.35;
   margin: 0;
-  color: var(--ink);
+  color: var(--olive-deep); /* Azul marino pizarra */
+}
+
+/* Ajuste responsive para tablet y móvil */
+@media (max-width: 960px) {
+  .amenity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .amenity-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================================
@@ -1645,13 +1711,14 @@ a.contact-item-val:hover {
 }
 
 /* =========================================================
-   Footer
+   FOOTER — AZUL NOCHE MEDITERRÁNEO (SIN MARRONES)
    ========================================================= */
 
 .site-footer {
-  background: #211d17;
-  color: #d8d0c4;
-  padding: 3.4rem 0 1.6rem;
+  background: #131e27; /* Azul noche pizarra profundo: elegante, limpio y sin tonos marrones */
+  color: #c5d3dc;      /* Gris perla azulado suave para lectura descansada */
+  padding: 3.8rem 0 1.8rem;
+  border-top: 1px solid rgba(56, 168, 196, 0.15); /* Separación sutil celeste */
 }
 
 .footer-inner {
@@ -1659,23 +1726,43 @@ a.contact-item-val:hover {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
+/* Título de las columnas ("Contacto", "Aviso legal") */
 .site-footer h2 {
-  color: var(--cream);
-  font-size: 1.1rem;
-  margin-bottom: 0.7rem;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.9rem;
 }
 
+/* Enlaces del pie de página */
 .site-footer a {
-  color: var(--sand);
+  color: #e2ecf2;
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
+.site-footer a:hover {
+  color: #38a8c4; /* Se ilumina en celeste piscina al pasar el cursor */
+}
+
+/* Nombre comercial "Can Patró" */
 .footer-brand .brand-name {
-  color: var(--cream);
-  font-size: 1.9rem;
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2rem;
   margin-bottom: 0.4rem;
+}
+
+.footer-brand p {
+  color: #9cb2c0;
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .footer-legal-links {
@@ -1684,20 +1771,21 @@ a.contact-item-val:hover {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.2rem;
+  gap: 0.6rem 1.4rem;
 }
 
+/* Línea divisoria y créditos inferiores */
 .footer-legal {
   width: min(1180px, calc(100% - 2.4rem));
-  margin: 2.2rem auto 0;
-  padding-top: 1.4rem;
-  border-top: 1px solid rgba(244, 236, 221, 0.12);
-  font-size: 0.8rem;
-  color: #b7aea2;
+  margin: 2.6rem auto 0;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  color: #839aa8;
 }
 
 .footer-legal p {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
 }
 
 /* =========================================================
