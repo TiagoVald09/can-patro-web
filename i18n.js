@@ -41,12 +41,12 @@ var TRANSLATIONS = {
             "hero.fact3": "8 baños",
             "hero.fact4": "Piscina · Barbacoa · Parking",
             "intro.eyebrow": "La finca",
-            "intro.title": "Una casa grande para descansar de verdad.",
+            "intro.title": "Una casa grande para descansar de verdad",
             "intro.p1": "En las afueras de Manacor, Can Patró abre sus puertas a quienes buscan paz sin renunciar a la belleza. La villa, de 650 m², se alquila por habitaciones individuales, mini-apartamentos o en exclusiva: usted elige si viaja en pareja, con amigos o con toda la familia.",
             "intro.p2": "El día empieza con luz de campo, el canto de los pájaros y el agua de la piscina. Por la tarde, una barbacoa bajo el cielo mallorquín. Por la noche, dos chimeneas encendidas y el silencio de la isla.",
             "intro.note": "A 13 km de las Cuevas del Drach y a 54 km del aeropuerto de Palma. Lo bastante cerca para explorar; lo bastante lejos para desconectar.",
             "stays.eyebrow": "Alojamientos",
-            "stays.title": "Tres maneras de quedarse en Can Patró.",
+            "stays.title": "Tres maneras de quedarse en Can Patró",
             "stays.lead": "Flexibilidad total para cada viaje: una habitación para una escapada íntima, un mini-apartamento con independencia propia, o la villa entera para reunir a todo el grupo.",
             "stays.casa.title": "Casa Completa",
             "stays.casa.desc": "Los 650 m² de Can Patró solo para los suyos: 8 dormitorios, 8 baños, piscina, jardín y cocina completa. Ideal para celebraciones, familias numerosas o grupos de amigos.",
@@ -58,7 +58,7 @@ var TRANSLATIONS = {
             "stays.miniapt.desc": "Espacios independientes con cocina propia, pensados para quienes buscan autonomía sin perder el encanto y la calma de la finca.",
             "stays.miniapt.cta": "Ver disponibilidad",
             "amenities.eyebrow": "Comodidades",
-            "amenities.title": "Todo lo necesario. Nada que distraiga.",
+            "amenities.title": "Todo lo necesario Nada que distraiga",
             "amenities.lead": "Can Patró está pensada para que el día fluya, dentro y fuera de la casa.",
             "amenities.pool": "Piscina al aire libre",
             "amenities.bbq": "Zona de barbacoa",
@@ -69,12 +69,12 @@ var TRANSLATIONS = {
             "amenities.wifi": "WiFi gratis en toda la finca",
             "amenities.views": "Vistas al jardín y montaña",
             "gallery.eyebrow": "Galería",
-            "gallery.title": "Can Patró, en imágenes.",
+            "gallery.title": "Can Patró en imágenes",
             "gallery.lead": "Un vistazo a la casa, el jardín y la luz de Manacor.",
             "gallery.cta": "Ver más fotos",
             "gallery.ctaLess": "Ver menos fotos",
             "location.eyebrow": "Ubicación",
-            "location.title": "El campo, cerca de todo lo demás.",
+            "location.title": "El campo, cerca de todo lo demás",
             "location.lead": "Can Patró está en Manacor, en el corazón agrícola de Mallorca, a poca distancia de cuevas, playas y el aeropuerto.",
             "location.address": "Polígono 33, 242 · 07509 Manacor, Mallorca, España",
             "location.dist.manacor": "Manacor",
@@ -106,12 +106,12 @@ var TRANSLATIONS = {
             "blog.post3.title": "Mercados y pueblos del Llevant",
             "blog.post3.excerpt": "Un recorrido sin prisa por los mercados semanales y las calles de piedra del este de Mallorca, con Can Patró como base.",
             "cta.eyebrow": "Reservas",
-            "cta.title": "Compruebe fechas y reserve con calma.",
+            "cta.title": "Compruebe fechas y reserve con calma",
             "cta.lead": "El calendario de Can Patró se gestiona con un sistema externo de disponibilidad. Elija habitación, mini-apartamento o casa completa y solicite las fechas que tiene en mente.",
             "cta.btn1": "Reservar",
             "cta.btn2": "Escribir a reservas",
             "contact.eyebrow": "Contacto",
-            "contact.title": "Le esperamos en Manacor.",
+            "contact.title": "Le esperamos en Manacor",
             "contact.lead": "Cuéntenos cuántas personas viajan, qué tipo de alojamiento prefiere y las fechas aproximadas. Respondemos con claridad y sin prisas.",
             "contact.info.label": "Atención al cliente",
             "contact.reservas.label": "Reservas y gestión",
@@ -154,7 +154,7 @@ var TRANSLATIONS = {
             "cookies.marketing.desc": "Para mostrar contenido relevante en otras webs.",
             "cookies.save": "Guardar preferencias",
             "faq.eyebrow": "Preguntas frecuentes",
-            "faq.title": "Todo lo que necesita saber.",
+            "faq.title": "Todo lo que necesita saber",
             "faq.lead": "Si tiene otra duda, escríbanos a info@canpatro.com y le responderemos con gusto.",
             "faq.q1": "¿Cuál es el horario de check-in y check-out?",
             "faq.a1": "El check-in es a partir de las 16:00 y el check-out hasta las 11:00. Si su vuelo lo permite, contáctenos: siempre que la disponibilidad lo permita, intentamos adaptar los horarios a su llegada o salida.",
@@ -222,12 +222,12 @@ var TRANSLATIONS = {
             "hero.fact3": "8 bathrooms",
             "hero.fact4": "Pool · Barbecue · Parking",
             "intro.eyebrow": "The estate",
-            "intro.title": "A big house to truly rest in.",
+            "intro.title": "A big house to truly rest in",
             "intro.p1": "On the outskirts of Manacor, Can Patró welcomes those looking for peace without giving up beauty. The 650 m² villa is rented by individual room, mini-apartment, or in full: you choose whether you're travelling as a couple, with friends, or with the whole family.",
             "intro.p2": "The day starts with countryside light, birdsong and the water of the pool. In the afternoon, a barbecue under the Mallorcan sky. At night, two lit fireplaces and the silence of the island.",
             "intro.note": "13 km from the Caves of Drach and 54 km from Palma airport. Close enough to explore; far enough to switch off.",
             "stays.eyebrow": "Accommodation",
-            "stays.title": "Three ways to stay at Can Patró.",
+            "stays.title": "Three ways to stay at Can Patró",
             "stays.lead": "Total flexibility for every trip: a room for an intimate getaway, a mini-apartment with its own independence, or the whole villa to bring the whole group together.",
             "stays.casa.title": "Full House",
             "stays.casa.desc": "All 650 m² of Can Patró just for you: 8 bedrooms, 8 bathrooms, pool, garden and a fully equipped kitchen. Ideal for celebrations, large families or groups of friends.",
@@ -239,7 +239,7 @@ var TRANSLATIONS = {
             "stays.miniapt.desc": "Independent spaces with their own kitchen, designed for those seeking autonomy without losing the charm and calm of the estate.",
             "stays.miniapt.cta": "Check availability",
             "amenities.eyebrow": "Amenities",
-            "amenities.title": "Everything you need. Nothing to distract you.",
+            "amenities.title": "Everything you need, Nothing to distract you",
             "amenities.lead": "Can Patró is designed for the day to flow, indoors and out.",
             "amenities.pool": "Outdoor swimming pool",
             "amenities.bbq": "Barbecue area",
@@ -250,12 +250,12 @@ var TRANSLATIONS = {
             "amenities.wifi": "Free high-speed WiFi",
             "amenities.views": "Garden & mountain views",
             "gallery.eyebrow": "Gallery",
-            "gallery.title": "Can Patró, in pictures.",
+            "gallery.title": "Can Patró in pictures",
             "gallery.lead": "A glimpse of the house, the garden and the Manacor light.",
             "gallery.cta": "See more photos",
             "gallery.ctaLess": "See fewer photos",
             "location.eyebrow": "Location",
-            "location.title": "The countryside, close to everything else.",
+            "location.title": "The countryside, close to everything else",
             "location.lead": "Can Patró is in Manacor, in the agricultural heart of Mallorca, a short distance from caves, beaches and the airport.",
             "location.address": "Polígono 33, 242 · 07509 Manacor, Mallorca, Spain",
             "location.dist.manacor": "Manacor",
@@ -287,12 +287,12 @@ var TRANSLATIONS = {
             "blog.post3.title": "Markets and villages of the Llevant",
             "blog.post3.excerpt": "An unhurried tour of the weekly markets and stone streets of eastern Mallorca, with Can Patró as your base.",
             "cta.eyebrow": "Bookings",
-            "cta.title": "Check dates and book at ease.",
+            "cta.title": "Check dates and book at ease",
             "cta.lead": "Can Patró's calendar is managed through an external availability system. Choose a room, mini-apartment or the full house and request the dates you have in mind.",
             "cta.btn1": "Book now",
             "cta.btn2": "Email reservations",
             "contact.eyebrow": "Contact",
-            "contact.title": "We're waiting for you in Manacor.",
+            "contact.title": "We're waiting for you in Manacor",
             "contact.lead": "Tell us how many people are travelling, what type of accommodation you prefer and your approximate dates. We reply clearly, without rushing.",
             "contact.info.label": "Guest enquiries",
             "contact.reservas.label": "Reservations",
@@ -335,7 +335,7 @@ var TRANSLATIONS = {
             "cookies.marketing.desc": "Used to show relevant content on other websites.",
             "cookies.save": "Save preferences",
             "faq.eyebrow": "Frequently asked questions",
-            "faq.title": "Everything you need to know.",
+            "faq.title": "Everything you need to know",
             "faq.lead": "If you have another question, write to us at info@canpatro.com and we'll be happy to help.",
             "faq.q1": "What are the check-in and check-out times?",
             "faq.a1": "Check-in is from 4:00 PM and check-out until 11:00 AM. If your flight allows it, contact us: whenever availability permits, we try to adapt the times to your arrival or departure.",
@@ -403,12 +403,12 @@ var TRANSLATIONS = {
             "hero.fact3": "8 Badezimmer",
             "hero.fact4": "Pool · Grill · Parkplatz",
             "intro.eyebrow": "Das Anwesen",
-            "intro.title": "Ein großes Haus für echte Erholung.",
+            "intro.title": "Ein großes Haus für echte Erholung",
             "intro.p1": "Am Rande von Manacor öffnet Can Patró seine Türen für alle, die Ruhe suchen, ohne auf Schönheit zu verzichten. Die 650 m² große Villa wird zimmerweise, als Miniapartment oder exklusiv vermietet: Sie entscheiden, ob Sie zu zweit, mit Freunden oder mit der ganzen Familie reisen.",
             "intro.p2": "Der Tag beginnt mit Licht auf dem Land, Vogelgezwitscher und dem Wasser des Pools. Am Nachmittag ein Grillabend unter dem mallorquinischen Himmel. Nachts zwei brennende Kamine und die Stille der Insel.",
             "intro.note": "13 km von den Drachenhöhlen und 54 km vom Flughafen Palma entfernt. Nah genug zum Erkunden, fern genug zum Abschalten.",
             "stays.eyebrow": "Unterkünfte",
-            "stays.title": "Drei Arten, in Can Patró zu wohnen.",
+            "stays.title": "Drei Arten in Can Patró zu wohnen",
             "stays.lead": "Volle Flexibilität für jede Reise: ein Zimmer für eine intime Auszeit, ein Miniapartment mit eigener Unabhängigkeit oder die ganze Villa, um die gesamte Gruppe zusammenzubringen.",
             "stays.casa.title": "Ganzes Haus",
             "stays.casa.desc": "Alle 650 m² von Can Patró nur für Sie: 8 Schlafzimmer, 8 Badezimmer, Pool, Garten und eine voll ausgestattete Küche. Ideal für Feiern, große Familien oder Freundesgruppen.",
@@ -420,7 +420,7 @@ var TRANSLATIONS = {
             "stays.miniapt.desc": "Unabhängige Bereiche mit eigener Küche, gedacht für alle, die Eigenständigkeit suchen, ohne auf den Charme und die Ruhe des Anwesens zu verzichten.",
             "stays.miniapt.cta": "Verfügbarkeit prüfen",
             "amenities.eyebrow": "Ausstattung",
-            "amenities.title": "Alles Nötige. Nichts, was ablenkt.",
+            "amenities.title": "Alles Nötige. Nichts, was ablenkt",
             "amenities.lead": "Can Patró ist so gestaltet, dass der Tag drinnen wie draußen einfach fließt.",
         "amenities.pool": "Freiluftpool",
             "amenities.bbq": "Grillbereich",
@@ -431,12 +431,12 @@ var TRANSLATIONS = {
             "amenities.wifi": "Kostenloses WLAN",
             "amenities.views": "Garten- und Bergblick",
             "gallery.eyebrow": "Galerie",
-            "gallery.title": "Can Patró, in Bildern.",
+            "gallery.title": "Can Patró in Bildern",
             "gallery.lead": "Ein Blick auf das Haus, den Garten und das Licht von Manacor.",
             "gallery.cta": "Mehr Fotos ansehen",
             "gallery.ctaLess": "Weniger Fotos anzeigen",
             "location.eyebrow": "Lage",
-            "location.title": "Das Land, nah an allem anderen.",
+            "location.title": "Das Land, nah an allem anderen",
             "location.lead": "Can Patró liegt in Manacor, im landwirtschaftlichen Herzen Mallorcas, nur kurze Zeit von Höhlen, Stränden und dem Flughafen entfernt.",
             "location.address": "Polígono 33, 242 · 07509 Manacor, Mallorca, Spanien",
             "location.dist.manacor": "Manacor",
@@ -468,12 +468,12 @@ var TRANSLATIONS = {
             "blog.post3.title": "Märkte und Dörfer der Llevant-Region",
             "blog.post3.excerpt": "Ein entspannter Streifzug durch die Wochenmärkte und steinernen Gassen im Osten Mallorcas, mit Can Patró als Ausgangspunkt.",
             "cta.eyebrow": "Buchungen",
-            "cta.title": "Termine prüfen und in Ruhe buchen.",
+            "cta.title": "Termine prüfen und in Ruhe buchen",
             "cta.lead": "Der Kalender von Can Patró wird über ein externes Verfügbarkeitssystem verwaltet. Wählen Sie Zimmer, Miniapartment oder das ganze Haus und fragen Sie Ihre Wunschtermine an.",
             "cta.btn1": "Jetzt buchen",
             "cta.btn2": "Reservierung per E-Mail",
             "contact.eyebrow": "Kontakt",
-            "contact.title": "Wir erwarten Sie in Manacor.",
+            "contact.title": "Wir erwarten Sie in Manacor",
             "contact.lead": "Teilen Sie uns mit, wie viele Personen reisen, welche Unterkunftsart Sie bevorzugen und Ihren ungefähren Zeitraum. Wir antworten klar und ohne Eile.",
             "contact.info.label": "Kundenservice",
             "contact.reservas.label": "Reservierungen",
@@ -516,7 +516,7 @@ var TRANSLATIONS = {
             "cookies.marketing.desc": "Um relevante Inhalte auf anderen Websites anzuzeigen.",
             "cookies.save": "Einstellungen speichern",
             "faq.eyebrow": "Häufige Fragen",
-            "faq.title": "Alles, was Sie wissen müssen.",
+            "faq.title": "Alles, was Sie wissen müssen",
             "faq.lead": "Bei weiteren Fragen schreiben Sie uns an info@canpatro.com — wir helfen Ihnen gerne weiter.",
             "faq.q1": "Wann ist Check-in und Check-out?",
             "faq.a1": "Der Check-in ist ab 16:00 Uhr, der Check-out bis 11:00 Uhr. Falls es Ihr Flug erlaubt, kontaktieren Sie uns: Je nach Verfügbarkeit passen wir die Zeiten gerne an Ihre An- oder Abreise an.",
@@ -610,18 +610,33 @@ function applyLanguage(lang) {
 }
 
 function initLanguage() {
-  var saved = "es";
+  var saved = null;
   try {
-    saved = window.localStorage.getItem(STORAGE_LANG) || "es";
+    saved = window.localStorage.getItem(STORAGE_LANG);
   } catch (e) {
-    saved = "es";
+    saved = null;
   }
+
+  // Si no hay idioma guardado por una visita anterior, detectamos el navegador
+  if (!saved) {
+    var browserLang = (navigator.language || navigator.userLanguage || "en")
+      .slice(0, 2)
+      .toLowerCase();
+
+    if (browserLang === "de" || browserLang === "es") {
+      saved = browserLang;
+    } else {
+      saved = "en"; // Turistas británicos, nórdicos y resto del mundo
+    }
+  }
+
+  // Verificación de seguridad
   if (!TRANSLATIONS[saved]) {
-    saved = "es";
+    saved = "en";
   }
+
   applyLanguage(saved);
 }
-
 document.querySelectorAll(".lang-dropdown a").forEach(function (enlace) {
   enlace.addEventListener("click", function (event) {
     event.preventDefault(); // Evita que la página salte hacia arriba al hacer clic
