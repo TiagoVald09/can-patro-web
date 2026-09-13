@@ -585,10 +585,11 @@
               </label>
 
               <!-- Checkbox RGPD legal -->
-              <label class="checkbox-label">
-                <input type="checkbox" required />
-                <span>He leído y acepto el tratamiento de mis datos según la <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a>.</span>
-              </label>
+<label class="form-checkbox-label">
+  <input type="checkbox" required />
+  <span data-i18n="form.consent">He leído y acepto el tratamiento de mis datos según la</span>
+  <a href="politica-privacidad.html" target="_blank" data-i18n="footer.legal.privacy">Política de Privacidad</a>
+</label>
 
               <button class="btn btn-contact-submit" type="submit">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
@@ -604,7 +605,7 @@
             <div class="contact-info-col reveal">
               <!-- Tarjeta de canales directos -->
               <div class="contact-card info-card">
-                <h3>Atención directa</h3>
+                <h3 data-i18n="contact.direct">Atención directa</h3>
 
                 <ul class="contact-items-list">
                   <!-- TELÉFONO / WHATSAPP (Espacio listo para cuando lo tengáis) -->
@@ -655,14 +656,14 @@
               </div>
 
               <!-- Tarjeta de Reserva Directa (Estilo boutique superior) -->
-              <div class="contact-card booking-cta-card">
-                <h3>Reservar Estancia</h3>
-                <p>Compruebe fechas libres en tiempo real y reserve con trato directo y confirmación oficial.</p>
+          <div class="contact-card booking-cta-card">
+            <h3 data-i18n="contact.box.title">Reservar Estancia</h3>
+                <p data-i18n="contact.box.desc">Compruebe fechas libres en tiempo real y reserve con trato directo y confirmación oficial.</p>
                 <a class="btn btn-booking-box" href="reservar.html">
-                  <span>Ver disponibilidad</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
+              <span data-i18n="nav.cta">Ver disponibilidad</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
             </div>
           </div>
         </div>
