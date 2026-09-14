@@ -8,8 +8,8 @@
       content="Descubra los lugares de interés cerca de Can Patró, agroturismo en Manacor, Mallorca: Rafa Nadal Academy, Cuevas del Drach, Porto Cristo, Playa Romántica y el mercado de Manacor."
     />
     <title>Descubra el entorno | Can Patró</title>
-    <link rel="icon" href="logo.png" />
-    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="icon" href="logocircular.png" />
+    <link rel="apple-touch-icon" href="logocircular.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,152 +17,268 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+<style>
+    /* Ensanchar el contenedor para que no se vea apretado */
+    .place-detail-inner {
+      max-width: 1180px !important;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 5rem;
+    }
+
+    /* Enlace de volver */
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #73695f;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: #1f1d1b;
+    }
+
+    /* Grid amplio en dos columnas equilibradas */
+    .place-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr; /* Más protagonismo a la fotografía */
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    /* Tipografía y textos de la ficha */
+    .place-kicker {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #9a8f82;
+      margin-bottom: 0.5rem;
+    }
+
+    .place-info h1 {
+      font-size: 2.6rem;
+      line-height: 1.15;
+      color: #1f1d1b;
+      margin: 0 0 1rem 0;
+    }
+
+    .place-badge {
+      display: inline-block;
+      background: #eee8df;
+      color: #574e44;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .place-info p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #4f4943;
+      margin-bottom: 1rem;
+    }
+
+    .place-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Tarjeta fotográfica ampliada */
+    .place-photo-card {
+      width: 100%;
+      height: 480px; /* Foto más alta y visual */
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.1);
+      background-color: #f1ede8;
+    }
+
+    .place-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Adaptación fluida a móvil y tablet */
+    @media (max-width: 900px) {
+      .place-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .place-photo-card {
+        height: 280px;
+        order: -1; /* En móviles la foto se coloca arriba del texto */
+      }
+      .place-info h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
   </head>
   <body>
     <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="brand" href="index.html#inicio">
-          <span class="brand-kicker" data-i18n="brand.kicker">Agroturismo</span>
-          <span class="brand-name">Can Patró</span>
-        </a>
+<header class="site-header" style="background-color: #211f1d; position: relative;">
 
-        <div class="lang-switch" role="group" aria-label="Selector de idioma / Language selector / Sprachauswahl">
-          <button type="button" class="lang-btn" data-lang="es" aria-pressed="true">ES</button>
-          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+  <div class="header-inner">
+    <!-- 1. LOGO (Izquierda) -->
+    <a class="brand" href="#inicio">
+      <img src="logo.png" alt="Logo Can Patró" class="brand-logo" />
+    </a>
+
+    <!-- Toggle para móvil -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label" data-i18n-aria-label="nav.open" aria-label="Abrir menú">
+      <span></span>
+    </label>
+
+    <!-- 2. NAVEGACIÓN (Centro/Derecha) -->
+    <nav class="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="#alojamientos" data-i18n="nav.alojamientos">Alojamientos</a></li>
+        <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+        <li><a href="#galeria" data-i18n="nav.galeria">Galería</a></li>
+        <li><a href="#ubicacion" data-i18n="nav.ubicacion">Ubicación</a></li>
+        
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        
+        <!-- Botón SOLO PARA MÓVIL (dentro del menú hamburguesa) -->
+        <li class="mobile-only-btn">
+          <a class="btn btn-primary nav-cta" href="reservar.html" data-i18n="nav.cta">Ver disponibilidad</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 3. ACCIONES: Idioma + Botón (Extremo Derecho en Escritorio) -->
+    <div class="header-actions">
+      <!-- Selector de Idiomas Premium -->
+      <div class="lang-menu">
+        <div class="lang-current">
+          ES <span class="arrow">▼</span>
         </div>
-
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label" data-i18n-aria-label="nav.open" aria-label="Abrir menú">
-          <span></span>
-        </label>
-
-        <nav class="site-nav" aria-label="Principal">
-          <ul>
-            <li><a href="index.html#alojamientos" data-i18n="nav.alojamientos">Alojamientos</a></li>
-            <li><a href="index.html#servicios" data-i18n="nav.servicios">Servicios</a></li>
-            <li><a href="index.html#galeria" data-i18n="nav.galeria">Galería</a></li>
-            <li><a href="index.html#ubicacion" data-i18n="nav.ubicacion">Ubicación</a></li>
-            <li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
-            <li><a href="index.html#contacto" data-i18n="nav.contacto">Contacto</a></li>
-            <li>
-              <a class="btn btn-nav" href="index.html#disponibilidad" data-i18n="nav.cta">Ver disponibilidad</a>
-            </li>
-          </ul>
-        </nav>
+        <ul class="lang-dropdown">
+          <li><a href="#" data-lang="es">Español</a></li>
+          <li><a href="#" data-lang="en">English</a></li>
+          <li><a href="#" data-lang="de">Deutsch</a></li>
+        </ul>
       </div>
-    </header>
+
+      <!-- Botón de Reserva (fuera del nav, visible solo en escritorio) -->
+      <a class="btn btn-nav desktop-only-btn" href="reservar.html" data-i18n="nav.cta">Ver disponibilidad</a>
+    </div>
+  </div>
+</header>
 
     <main id="contenido">
-      <section class="place-hero">
-        <div class="photo-slot place-hero-media" aria-hidden="true">[ESPACIO FOTOGRÁFICO]</div>
-      </section>
+
 
       <section class="place-detail-wrap">
         <div class="section-inner place-detail-inner reveal">
           <a class="back-link" href="index.html#ubicacion" data-i18n="place.backLink">← Volver a Can Patró</a>
 
-          <article class="place-detail" data-place="rafa-nadal" hidden>
-            <p class="eyebrow" data-i18n="place.eyebrow">Cerca de Can Patró</p>
-            <h1 data-i18n="place.rafanadal.title">Rafa Nadal Academy</h1>
-            <p class="place-distance" data-i18n="place.rafanadal.distance">A 10 minutos en coche desde Can Patró.</p>
-            <p data-i18n="place.rafanadal.body1">
-              Fundada por el tenista mallorquín Rafael Nadal, esta academia deportiva
-              reúne pistas de tenis y pádel, un centro de alto rendimiento y un
-              espacio expositivo dedicado a su trayectoria.
-            </p>
-            <p data-i18n="place.rafanadal.body2">
-              Ideal para los amantes del deporte que quieran combinar sus
-              vacaciones en Can Patró con una visita a uno de los referentes
-              deportivos de la isla.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="index.html#disponibilidad" data-i18n="place.cta1">Ver disponibilidad en Can Patró</a>
-              <a class="btn btn-outline" href="index.html#ubicacion" data-i18n="place.cta2">Volver al mapa</a>
-            </div>
-          </article>
+<article class="place-detail" data-place="rafa-nadal">
+  <div class="place-grid">
+    <div class="place-info">
+      <span class="place-kicker" data-i18n="place.eyebrow">CERCA DE CAN PATRÓ</span>
+      <h1 data-i18n="place.rn.title">Rafa Nadal Academy</h1>
+      <span class="place-badge" data-i18n="place.rn.badge">A 10 minutos en coche desde Can Patró.</span>
+      <p data-i18n="place.rn.p1">Fundada por el tenista mallorquín Rafael Nadal, esta academia deportiva reúne pistas de tenis y pádel, un centro de alto rendimiento y un espacio expositivo dedicado a su trayectoria.</p>
+      <p data-i18n="place.rn.p2">Ideal para los amantes del deporte que quieran combinar sus vacaciones en Can Patró con una visita a uno de los referentes deportivos de la isla.</p>
+      <div class="place-actions">
+        <a class="btn btn-primary" href="reservar.html" data-i18n="place.bookCta">Ver disponibilidad en Can Patró</a>
+        <a class="btn btn-secondary" href="index.html#ubicacion" data-i18n="place.mapCta">Volver al mapa</a>
+      </div>
+    </div>
+    <div class="place-photo-card">
+      <img src="entorno-rafa-nadal.jpg" alt="Rafa Nadal Academy en Manacor" loading="lazy">
+    </div>
+  </div>
+</article>
 
-          <article class="place-detail" data-place="cuevas-del-drach" hidden>
-            <p class="eyebrow" data-i18n="place.eyebrow">Cerca de Can Patró</p>
-            <h1 data-i18n="place.cuevas.title">Cuevas del Drach</h1>
-            <p class="place-distance" data-i18n="place.cuevas.distance">A 15 minutos en coche desde Can Patró.</p>
-            <p data-i18n="place.cuevas.body1">
-              Una de las cuevas más visitadas de España: galerías de piedra
-              caliza, estalactitas centenarias y el lago Martel, uno de los
-              lagos subterráneos más grandes de Europa.
-            </p>
-            <p data-i18n="place.cuevas.body2">
-              La visita incluye un pequeño concierto de música clásica sobre
-              el agua, a bordo de barcas iluminadas. Reserve entrada con
-              antelación en temporada alta.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="index.html#disponibilidad" data-i18n="place.cta1">Ver disponibilidad en Can Patró</a>
-              <a class="btn btn-outline" href="index.html#ubicacion" data-i18n="place.cta2">Volver al mapa</a>
-            </div>
-          </article>
+<article class="place-detail" data-place="cuevas-del-drach" hidden>
+  <div class="place-grid">
+    <div class="place-info">
+      <span class="place-kicker" data-i18n="place.eyebrow">CERCA DE CAN PATRÓ</span>
+      <h1 data-i18n="place.cd.title">Cuevas del Drach</h1>
+      <span class="place-badge" data-i18n="place.cd.badge">A 15 minutos en coche desde Can Patró.</span>
+      <p data-i18n="place.cd.p1">Una de las cuevas más visitadas de España: galerías de piedra caliza, estalactitas centenarias y el lago Martel, uno de los lagos subterráneos más grandes de Europa.</p>
+      <p data-i18n="place.cd.p2">La visita incluye un pequeño concierto de música clásica sobre el agua, a bordo de barcas iluminadas. Reserve entrada con antelación en temporada alta.</p>
+      <div class="place-actions">
+        <a class="btn btn-primary" href="reservar.html" data-i18n="place.bookCta">Ver disponibilidad en Can Patró</a>
+        <a class="btn btn-secondary" href="index.html#ubicacion" data-i18n="place.mapCta">Volver al mapa</a>
+      </div>
+    </div>
+    <div class="place-photo-card">
+      <img src="entorno-cuevas-del-drach.jpg" alt="Cuevas del Drach en Porto Cristo" loading="lazy">
+    </div>
+  </div>
+</article>
 
-          <article class="place-detail" data-place="porto-cristo" hidden>
-            <p class="eyebrow" data-i18n="place.eyebrow">Cerca de Can Patró</p>
-            <h1 data-i18n="place.portocristo.title">Porto Cristo</h1>
-            <p class="place-distance" data-i18n="place.portocristo.distance">A 15 minutos en coche desde Can Patró.</p>
-            <p data-i18n="place.portocristo.body1">
-              Antiguo pueblo de pescadores convertido en uno de los puertos
-              más encantadores del Llevant mallorquín, con un paseo marítimo
-              tranquilo y restaurantes frente al mar.
-            </p>
-            <p data-i18n="place.portocristo.body2">
-              Punto de partida habitual para visitar las Cuevas del Drach y
-              las Cuevas dels Hams, además de sus propias calas de aguas
-              tranquilas.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="index.html#disponibilidad" data-i18n="place.cta1">Ver disponibilidad en Can Patró</a>
-              <a class="btn btn-outline" href="index.html#ubicacion" data-i18n="place.cta2">Volver al mapa</a>
-            </div>
-          </article>
+<article class="place-detail" data-place="porto-cristo" hidden>
+  <div class="place-grid">
+    <div class="place-info">
+      <span class="place-kicker" data-i18n="place.eyebrow">CERCA DE CAN PATRÓ</span>
+      <h1 data-i18n="place.pc.title">Porto Cristo</h1>
+      <span class="place-badge" data-i18n="place.pc.badge">A 15 minutos en coche desde Can Patró.</span>
+      <p data-i18n="place.pc.p1">Pueblo pesquero y puerto natural del Levante mallorquín. Conserva barcos tradicionales, terrazas sobre el agua y un paseo marítimo perfecto para cenar pescado fresco o pasear al atardecer.</p>
+      <p data-i18n="place.pc.p2">Desde el puerto salen pequeñas embarcaciones que recorren las calas vírgenes del este de Mallorca.</p>
+      <div class="place-actions">
+        <a class="btn btn-primary" href="reservar.html" data-i18n="place.bookCta">Ver disponibilidad en Can Patró</a>
+        <a class="btn btn-secondary" href="index.html#ubicacion" data-i18n="place.mapCta">Volver al mapa</a>
+      </div>
+    </div>
+    <div class="place-photo-card">
+      <img src="entorno-porto-cristo.jpg" alt="Puerto tradicional de Porto Cristo" loading="lazy">
+    </div>
+  </div>
+</article>
 
-          <article class="place-detail" data-place="playa-romantica" hidden>
-            <p class="eyebrow" data-i18n="place.eyebrow">Cerca de Can Patró</p>
-            <h1 data-i18n="place.playa.title">Playa Romántica</h1>
-            <p class="place-distance" data-i18n="place.playa.distance">A 20 minutos en coche desde Can Patró.</p>
-            <p data-i18n="place.playa.body1">
-              Una cala pequeña y resguardada, de aguas turquesas y arena fina,
-              popular entre familias por su ambiente tranquilo y sus aguas
-              poco profundas.
-            </p>
-            <p data-i18n="place.playa.body2">
-              Un buen plan para una tarde de playa después de la piscina de
-              Can Patró, con varios chiringuitos cerca para comer frente al
-              mar.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="index.html#disponibilidad" data-i18n="place.cta1">Ver disponibilidad en Can Patró</a>
-              <a class="btn btn-outline" href="index.html#ubicacion" data-i18n="place.cta2">Volver al mapa</a>
-            </div>
-          </article>
+<article class="place-detail" data-place="playa-romantica" hidden>
+  <div class="place-grid">
+    <div class="place-info">
+      <span class="place-kicker" data-i18n="place.eyebrow">CERCA DE CAN PATRÓ</span>
+      <h1 data-i18n="place.pr.title">Playa Romántica</h1>
+      <span class="place-badge" data-i18n="place.pr.badge">A 20 minutos en coche desde Can Patró.</span>
+      <p data-i18n="place.pr.p1">Cala de arena blanca y aguas turquesas encajada entre acantilados bajos. Es una de las playas más cómodas de la zona este para nadar y pasar la mañana antes de regresar a la tranquilidad de la finca.</p>
+      <p data-i18n="place.pr.p2">Cuenta con acceso cómodo, aparcamiento cercano y aguas muy tranquilas los días sin viento de levante.</p>
+      <div class="place-actions">
+        <a class="btn btn-primary" href="reservar.html" data-i18n="place.bookCta">Ver disponibilidad en Can Patró</a>
+        <a class="btn btn-secondary" href="index.html#ubicacion" data-i18n="place.mapCta">Volver al mapa</a>
+      </div>
+    </div>
+    <div class="place-photo-card">
+      <img src="entorno-playa-romantica.jpg" alt="Aguas turquesas en Playa Romántica Mallorca" loading="lazy">
+    </div>
+  </div>
+</article>
 
-          <article class="place-detail" data-place="mercado-manacor" hidden>
-            <p class="eyebrow" data-i18n="place.eyebrow">Cerca de Can Patró</p>
-            <h1 data-i18n="place.mercado.title">Mercado de Manacor</h1>
-            <p class="place-distance" data-i18n="place.mercado.distance">A 8 minutos en coche desde Can Patró.</p>
-            <p data-i18n="place.mercado.body1">
-              Cada lunes, el centro de Manacor se llena con uno de los
-              mercados semanales más animados de Mallorca: producto local,
-              flores, ropa y artesanía.
-            </p>
-            <p data-i18n="place.mercado.body2">
-              Una buena forma de empezar el día como un mallorquín más, antes
-              de volver a la calma de Can Patró.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="index.html#disponibilidad" data-i18n="place.cta1">Ver disponibilidad en Can Patró</a>
-              <a class="btn btn-outline" href="index.html#ubicacion" data-i18n="place.cta2">Volver al mapa</a>
-            </div>
-          </article>
-
+<article class="place-detail" data-place="mercado-manacor" hidden>
+  <div class="place-grid">
+    <div class="place-info">
+      <span class="place-kicker" data-i18n="place.eyebrow">CERCA DE CAN PATRÓ</span>
+      <h1 data-i18n="place.mm.title">Mercado de Manacor</h1>
+      <span class="place-badge" data-i18n="place.mm.badge">A 8 minutos en coche desde Can Patró.</span>
+      <p data-i18n="place.mm.p1">Cada lunes, el centro de Manacor se llena con uno de los mercados semanales más animados de Mallorca: producto local, flores, ropa y artesanía.</p>
+      <p data-i18n="place.mm.p2">Una buena forma de empezar el día como un mallorquín más, antes de volver a la calma de Can Patró.</p>
+      <div class="place-actions">
+        <a class="btn btn-primary" href="reservar.html" data-i18n="place.bookCta">Ver disponibilidad en Can Patró</a>
+        <a class="btn btn-secondary" href="index.html#ubicacion" data-i18n="place.mapCta">Volver al mapa</a>
+      </div>
+    </div>
+    <div class="place-photo-card">
+      <img src="entorno-mercado-manacor.jpg" alt="Puestos del mercado semanal de Manacor" loading="lazy">
+    </div>
+  </div>
+</article>
           <article class="place-detail" data-place="not-found" hidden>
             <p class="eyebrow" data-i18n="place.eyebrow">Cerca de Can Patró</p>
             <h1 data-i18n="place.notFound.title">Este lugar no está disponible</h1>
@@ -178,7 +294,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
           <p class="brand-name">Can Patró</p>
@@ -201,10 +317,6 @@
       <div class="footer-legal">
         <p>
           © <span id="year">2026</span> Can Patró · <span data-i18n="footer.owner">Titular: Qhapaq Ayllu S.L.</span>
-        </p>
-        <p data-i18n="footer.disclaimer">
-          Esta web no gestiona pagos; las reservas se confirman por los
-          canales oficiales de la finca.
         </p>
       </div>
     </footer>
