@@ -542,8 +542,15 @@
           </header>
 
           <div class="contact-grid">
-            <!-- COLUMNA 1: Formulario limpio y con RGPD -->
-            <form class="contact-form-card reveal" action="mailto:reservas@canpatro.com" method="post" enctype="text/plain">
+
+<!-- COLUMNA 1: Formulario limpio, con RGPD y conectado a Web3Forms -->
+            <form class="contact-form-card reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <!-- Clave oficial de Web3Forms de Can Patró -->
+              <input type="hidden" name="access_key" value="7c9ccbec-84f5-44d1-a9d2-661086dac05b" />
+              <input type="hidden" name="subject" value="Nueva consulta desde la web Can Patró" />
+              <input type="hidden" name="from_name" value="Can Patró Web" />
+              <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off" />
+
               <label>
                 <span data-i18n="form.name">Nombre</span>
                 <input type="text" name="nombre" required data-i18n-placeholder="form.name.placeholder" placeholder="Su nombre completo" />
@@ -551,16 +558,16 @@
 
               <label>
                 <span data-i18n="form.email">Correo electrónico</span>
-                <input type="email" name="correo" required data-i18n-placeholder="form.email.placeholder" placeholder="ejemplo@correo.com" />
+                <input type="email" name="email" required data-i18n-placeholder="form.email.placeholder" placeholder="ejemplo@correo.com" />
               </label>
 
               <label>
                 <span data-i18n="form.stay">Tipo de alojamiento</span>
                 <select name="estancia">
-                  <option value="habitacion" data-i18n="form.stay.room">Habitación individual</option>
-                  <option value="miniapt" data-i18n="form.stay.miniapt">Mini-departamento</option>
-                  <option value="casa" data-i18n="form.stay.house">Casa completa</option>
-                  <option value="consultar" data-i18n="form.stay.unsure">Aún no lo sé</option>
+                  <option value="Habitación individual" data-i18n="form.stay.room">Habitación individual</option>
+                  <option value="Mini-departamento" data-i18n="form.stay.miniapt">Mini-departamento</option>
+                  <option value="Casa completa" data-i18n="form.stay.house">Casa completa</option>
+                  <option value="Aún no lo sé" data-i18n="form.stay.unsure">Aún no lo sé</option>
                 </select>
               </label>
 
@@ -576,20 +583,21 @@
               </label>
 
               <!-- Checkbox RGPD legal -->
-<label class="form-checkbox-label">
-  <input type="checkbox" required />
-  <span data-i18n="form.consent">He leído y acepto el tratamiento de mis datos según la</span>
-  <a href="politica-privacidad.html" data-i18n="footer.legal.privacy">Política de Privacidad</a>
-</label>
+              <label class="checkbox-label">
+                <input type="checkbox" required />
+                <span>
+                  <span data-i18n="form.consent">He leído y acepto el tratamiento de mis datos según la</span>
+                  <a href="politica-privacidad.html" data-i18n="footer.legal.privacy">Política de Privacidad</a>
+                </span>
+              </label>
 
               <button class="btn btn-contact-submit" type="submit">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                 <span data-i18n="form.submit">Enviar mensaje</span>
               </button>
 
-              <p class="form-note" data-i18n="form.note">
-                Este formulario abre su correo para enviarnos el mensaje. No procesamos pagos en esta web.
-              </p>
+              <!-- Mensaje dinámico de confirmación (oculto hasta que se envía) -->
+              <p class="form-note" id="form-result" hidden></p>
             </form>
 
             <!-- COLUMNA 2: Información directa + Bloque de Reserva -->
@@ -895,65 +903,59 @@
         }
 
         /* =========================================================
-           Banner de cookies (RGPD)
+           Formulario de contacto — Envío directo con Web3Forms
            ========================================================= */
-        var cookieBanner = document.getElementById("cookie-banner");
-        var cookieAccept = document.getElementById("cookie-accept");
-        var cookieConfig = document.getElementById("cookie-config");
-        var cookieSettings = document.getElementById("cookie-settings");
-        var cookieSave = document.getElementById("cookie-save");
+        var contactForm = document.getElementById("contact-form");
+        var formResult = document.getElementById("form-result");
 
-        function hasStoredConsent() {
-          try {
-            return !!window.localStorage.getItem(STORAGE_COOKIES);
-          } catch (e) {
-            return false;
-          }
-        }
+        if (contactForm && formResult) {
+          var submitBtn = contactForm.querySelector('button[type="submit"]');
+          var submitText = submitBtn ? submitBtn.querySelector("span[data-i18n]") : null;
 
-        function storeConsent(value) {
-          try {
-            window.localStorage.setItem(STORAGE_COOKIES, JSON.stringify(value));
-          } catch (e) {
-            /* almacenamiento no disponible: se ignora */
-          }
-        }
+          contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            var lang = document.documentElement.getAttribute("lang") || "es";
+            var dict = (window.TRANSLATIONS && window.TRANSLATIONS[lang]) || TRANSLATIONS.es;
 
-        if (cookieBanner && !hasStoredConsent()) {
-          cookieBanner.removeAttribute("hidden");
-        }
-
-        if (cookieAccept) {
-          cookieAccept.addEventListener("click", function () {
-            storeConsent({ necessary: true, analytics: true, marketing: true, date: new Date().toISOString() });
-            cookieBanner.setAttribute("hidden", "");
-          });
-        }
-
-        if (cookieConfig && cookieSettings) {
-          cookieConfig.addEventListener("click", function () {
-            var isHidden = cookieSettings.hasAttribute("hidden");
-            if (isHidden) {
-              cookieSettings.removeAttribute("hidden");
-              cookieConfig.setAttribute("aria-expanded", "true");
-            } else {
-              cookieSettings.setAttribute("hidden", "");
-              cookieConfig.setAttribute("aria-expanded", "false");
+            var originalText = submitText ? submitText.textContent : "";
+            if (submitText) {
+              submitText.textContent = dict["form.sending"] || "Enviando...";
             }
-          });
-        }
+            if (submitBtn) {
+              submitBtn.disabled = true;
+            }
+            formResult.hidden = true;
 
-        if (cookieSave) {
-          cookieSave.addEventListener("click", function () {
-            var analytics = document.getElementById("cookie-analytics");
-            var marketing = document.getElementById("cookie-marketing");
-            storeConsent({
-              necessary: true,
-              analytics: analytics ? analytics.checked : false,
-              marketing: marketing ? marketing.checked : false,
-              date: new Date().toISOString()
-            });
-            cookieBanner.setAttribute("hidden", "");
+            var formData = new FormData(contactForm);
+
+            try {
+              var response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+              });
+              var data = await response.json();
+
+              formResult.hidden = false;
+              if (response.ok && data.success) {
+                formResult.style.color = "#2b7a94";
+                formResult.textContent = dict["form.success"] || "¡Mensaje enviado! Le responderemos lo antes posible.";
+                contactForm.reset();
+              } else {
+                formResult.style.color = "#c1652a";
+                formResult.textContent = dict["form.error"] || "Hubo un error al enviar. Escríbanos a info@canpatro.com.";
+              }
+            } catch (error) {
+              formResult.hidden = false;
+              formResult.style.color = "#c1652a";
+              formResult.textContent = dict["form.error"] || "Hubo un error al enviar. Escríbanos a info@canpatro.com.";
+            } finally {
+              if (submitText) {
+                submitText.textContent = dict["form.submit"] || originalText;
+              }
+              if (submitBtn) {
+                submitBtn.disabled = false;
+              }
+            }
           });
         }
 
